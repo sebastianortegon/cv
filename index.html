@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sebastian Ortegon — Growth Consultant</title>
+<meta name="description" content="Growth Consultant with 10+ years driving ecommerce, marketplace and performance-marketing growth for 200+ brands across LATAM, the USA and Europe." />
+<style>
+  :root{
+    --sidebar-w: 400px;
+    --partners-h: 180px;
+    --bg-side: #ececea;
+    --bg-main: #ffffff;
+    --text: #17171a;
+    --muted: #6b6b6f;
+    --line: #e3e2df;
+    --accent: #eea621;
+    --accent-dark: #d98f13;
+    --pin: #d98f13;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;:0;}
+  body{
+    background:var(--bg-main);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- logo grayscale -> color hover ---------- */
+  .logo-img{
+    filter:grayscale(100%);
+    opacity:.55;
+    transition:filter .35s ease, opacity .35s ease, transform .2s ease;
+  }
+  .logo-img:hover{
+    filter:grayscale(0%);
+    opacity:1;
+    transform:translateY(-1px);
+  }
+
+  /* ---------- page skeleton ---------- */
+  .page{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+  }
+  .sidebar{ order:1; }
+  .content{ order:2; }
+  .partners-footer{ order:3; }
+
+  /* ================= SIDEBAR ================= */
+  .sidebar{
+    background:var(--bg-side);
+    padding:44px 32px 32px;
+  }
+  .avatar{
+    width:92px;
+    height:92px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#ddd;
+    margin-bottom:18px;
+  }
+  .name{
+    font-size:24px;
+    font-weight:800;
+    margin:0 0 12px;
+    letter-spacing:-.01em;
+  }
+  .name .last{ text-transform:uppercase; }
+
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:13.5px;
+    color:var(--muted);
+    margin-bottom:18px;
+  }
+  .meta-item{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .meta-item svg{ flex:none; opacity:.75; }
+
+  .stat-line{
+    font-size:17px;
+    font-weight:800;
+    margin:0 0 16px;
+    line-height:1.35;
+  }
+  .side-bio p{
+    font-size:14.5px;
+    color:#333;
+    margin:0 0 14px;
+  }
+  .side-bio p:last-child{ margin-bottom:0; }
+
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:26px 0 8px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 15px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+    text-decoration:none;
+    border:1.5px solid var(--text);
+    color:var(--text);
+    background:transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{ transform:translateY(-1px); box-shadow:0 3px 10px rgba(0,0,0,.08); }
+  .btn.primary{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#1a1200;
+  }
+  .btn.primary:hover{ background:var(--accent-dark); border-color:var(--accent-dark); }
+
+  /* ================= PARTNERS (official partner strip) ================= */
+  .partners-footer{
+    background:var(--bg-side);
+    padding:24px 32px 32px;
+  }
+  .partners-label{
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .label-mobile{ display:none; }
+  .partners-grid{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:20px 26px;
+  }
+  .partners-grid img{ height:26px; width:auto; max-width:110px; object-fit:contain; }
+
+  /* ================= MAIN CONTENT ================= */
+  .content{
+    background:var(--bg-main);
+  }
+  h2.section-title{
+    font-size:26px;
+    font-weight:800;
+    margin:0 0 20px;
+    letter-spacing:-.01em;
+  }
+  @media (min-width:900px){
+    .about {
+      padding: 56px 80px 14px;
+    }
+  }
+  .about p{
+    font-size:15.5px;
+    color:#2c2c2e;
+    max-width:1000px;
+    margin:0 0 16px;
+  }
+  .about p.trust{
+    font-weight:800;
+    color:var(--text);
+    margin-top:26px;
+  }
+
+  /* ---------- marquee ---------- */
+  .marquee-block{ margin-top:22px; }
+  .marquee-viewport{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    padding:10px 0;
+  }
+  .marquee-track{
+    display:flex;
+    align-items:center;
+    gap:56px;
+    width:max-content;
+    will-change:transform;
+  }
+  .marquee-track img{ height:36px; width:auto; max-width:150px; object-fit:contain; }
+  .marquee-viewport:hover .marquee-track{ animation-play-state:paused; }
+
+  .marquee-right .marquee-track{ animation:scrollRight 34s linear infinite; }
+  .marquee-left  .marquee-track{ animation:scrollLeft 34s linear infinite; margin-top:26px; }
+
+  @keyframes scrollRight{ from{ transform:translateX(-50%);} to{ transform:translateX(0%);} }
+  @keyframes scrollLeft { from{ transform:translateX(0%);} to{ transform:translateX(-50%);} }
+
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation:none !important; }
+  }
+
+  /* ---------- globe section ---------- */
+  .globe-section{
+    margin-top:56px;
+  }
+  .globe-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:2.6 / 1;
+    margin:0 auto;
+    touch-action:none;
+    cursor:grab;
+    overflow:hidden;
+    -webkit-user-select:none;
+    user-select:none;
+  }
+  .globe-wrap.dragging{ cursor:grabbing; }
+  .globe-wrap canvas{
+    width:100%;
+    height:100%;
+    display:block;
+    -webkit-user-drag:none;
+    user-drag:none;
+  }
+  /* ================= DESKTOP LAYOUT ================= */
+  @media (min-width:900px){
+    .sidebar{
+      position:fixed;
+      top:0; left:0;
+      width:var(--sidebar-w);
+      bottom:var(--partners-h);
+      overflow-y:auto;
+    }
+    .partners-footer{
+      position:fixed;
+      left:0; bottom:0;
+      width:var(--sidebar-w);
+      height:var(--partners-h);
+      overflow-y:auto;
+      border-top:1px solid var(--line);
+    }
+    .content{
+      margin-left:var(--sidebar-w);
+    }
+  }
+
+  /* ================= MOBILE LAYOUT ================= */
+  @media (max-width:899px){
+    .sidebar{ padding:36px 24px 28px; }
+    .content{ padding:40px 24px 0px; }
+    .partners-footer{
+      background:#17171a;
+      padding:26px 24px 34px;
+    }
+    .label-desktop{ display:none; }
+    .label-mobile{ display:block; color:#c9c9cc; }
+    .partners-grid img{
+      filter:grayscale(100%) brightness(0) invert(1);
+      opacity:.85;
+    }
+    .partners-grid img:hover{ opacity:1; filter:grayscale(100%) brightness(0) invert(1); }
+    .marquee-track{ gap:36px; }
+    .marquee-track img{ height:30px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <aside class="sidebar">
+      <img class="avatar" src="assets/img/profile.jpg" alt="Sebastian Ortegon" />
+      <h1 class="name">Sebastian <span class="last">Ortegon</span></h1>
+
+      <div class="meta-row">
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Growth Consultant
+        </span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M7 15h4"/></svg>
+          $250k/year in ads
+        </span>
+      </div>
+
+      <p class="stat-line">3–5x ROAS for +200 brands in 10 years</p>
+
+      <div class="side-bio">
+        <p>I help companies scale ecommerce, marketplaces and performance marketing.</p>
+        <p>Looking for increasing your online sales?<br/>I can definitely help you! 👇</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="assets/cv/sebastian-ortegon-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn" href="mailto:sebastian.ortegon@gmail.com">Contact me</a>
+        <a class="btn" href="https://linkedin.com/in/sebastianortegon" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </aside>
+
+    <!-- ================= RIGHT CONTENT ================= -->
+    <main class="content">
+      <section class="about">
+        <h2 class="section-title">About me</h2>
+        <p>For the past 10+ years I've combined design thinking with commercial strategy, driving measurable business results across ecommerce, marketplaces, and multichannel strategies. I lead strategic engagements for 200+ brands across LATAM, the USA, and Europe — helping the practice grow 77% YoY (2023) and 52% YoY (2024), while consistently delivering 3x–5x ROAS for retail, beauty, health, and B2B clients.</p>
+        <p>I specialize in designing and executing end-to-end digital strategies that integrate SEO, SEM, performance marketing, analytics, and UX optimization to increase online revenue and profitability. My approach combines strategic vision with hands-on execution — overseeing six-figure ad budgets, managing cross-functional teams, and translating data into commercial decisions that drive measurable growth.</p>
+        <p>With a proven track record of launching ecommerce operations across Shopify, MercadoLibre, Amazon, and other platforms in 15+ countries, and achieving up to $9 ROI per dollar spent, I bring the operational depth and strategic leadership to scale growth in complex, multinational environments.</p>
+        <p class="trust">You may not know me yet, but you'll probably recognize some of the brands I've helped grow:</p>
+      </section>
+
+      <section class="marquee-block" aria-label="Client brands">
+        <div class="marquee-viewport marquee-right">
+          <div class="marquee-track">
+            <img class="logo-img" src="assets/logos/smurfit-kappa.png" alt="Smurfit Kappa" />
+            <img class="logo-img" src="assets/logos/carvajal.png" alt="Carvajal" />
+            <img class="logo-img" src="assets/logos/tecnoquimicas.png" alt="Tecnoquimicas" />
+            <img class="logo-img" src="assets/logos/gobierno-colombia.png" alt="Gobierno de Colombia" />
+            <img class="logo-img" src="assets/logos/haceb.png" alt="Haceb" />
+            <img class="logo-img" src="assets/logos/colombina.png" alt="Colombina" />
+            <img class="logo-img" src="assets/logos/aromasense.png" alt="Aromasense" />
+            <img class="logo-img" src="assets/logos/arrurru.png" alt="Arrurru" />
+            <img class="logo-img" src="assets/logos/bioherbal.png" alt="Bioherbal" />
+            <!-- duplicate for seamless loop -->
+            <img class="logo-img" src="assets/logos/smurfit-kappa.png" alt="Smurfit Kappa" />
+            <img class="logo-img" src="assets/logos/carvajal.png" alt="Carvajal" />
+            <img class="logo-img" src="assets/logos/tecnoquimicas.png" alt="Tecnoquimicas" />
+            <img class="logo-img" src="assets/logos/gobierno-colombia.png" alt="Gobierno de Colombia" />
+            <img class="logo-img" src="assets/logos/haceb.png" alt="Haceb" />
+            <img class="logo-img" src="assets/logos/colombina.png" alt="Colombina" />
+            <img class="logo-img" src="assets/logos/aromasense.png" alt="Aromasense" />
+            <img class="logo-img" src="assets/logos/arrurru.png" alt="Arrurru" />
+            <img class="logo-img" src="assets/logos/bioherbal.png" alt="Bioherbal" />
+          </div>
+        </div>
+        <div class="marquee-viewport marquee-left">
+          <div class="marquee-track">
+            <img class="logo-img" src="assets/logos/la-french-tech.png" alt="La French Tech" />
+            <img class="logo-img" src="assets/logos/asocana.png" alt="Asocaña" />
+            <img class="logo-img" src="assets/logos/eurekakids.png" alt="EurekaKids" />
+            <img class="logo-img" src="assets/logos/procolombia.png" alt="ProColombia" />
+            <img class="logo-img" src="assets/logos/ccca-cali.png" alt="Centro Cultural Colombo Americano Cali" />
+            <img class="logo-img" src="assets/logos/menticol.png" alt="Menticol" />
+            <img class="logo-img" src="assets/logos/sun-pro.png" alt="Sun Pro" />
+            <img class="logo-img" src="assets/logos/intibon.png" alt="Intibon" />
+            <!-- duplicate for seamless loop -->
+            <img class="logo-img" src="assets/logos/la-french-tech.png" alt="La French Tech" />
+            <img class="logo-img" src="assets/logos/asocana.png" alt="Asocaña" />
+            <img class="logo-img" src="assets/logos/eurekakids.png" alt="EurekaKids" />
+            <img class="logo-img" src="assets/logos/procolombia.png" alt="ProColombia" />
+            <img class="logo-img" src="assets/logos/ccca-cali.png" alt="Centro Cultural Colombo Americano Cali" />
+            <img class="logo-img" src="assets/logos/menticol.png" alt="Menticol" />
+            <img class="logo-img" src="assets/logos/sun-pro.png" alt="Sun Pro" />
+            <img class="logo-img" src="assets/logos/intibon.png" alt="Intibon" />
+          </div>
+        </div>
+      </section>
+
+      <section class="globe-section" aria-label="Countries worked in">
+        <div class="globe-wrap" id="globeWrap">
+          <canvas id="globeCanvas"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= PARTNERS STRIP ================= -->
+    <section class="partners-footer">
+      <div class="partners-label">
+        <span class="label-desktop">Official partner:</span>
+        <span class="label-mobile">Oh, I'm also an official partner of:</span>
+      </div>
+      <div class="partners-grid">
+        <img class="logo-img" src="assets/partners/meta.png" alt="Meta Business Partner" />
+        <img class="logo-img" src="assets/partners/google-partner.png" alt="Google Partner" />
+        <img class="logo-img" src="assets/partners/tiktok.png" alt="TikTok Marketing Partner" />
+        <img class="logo-img" src="assets/partners/shopify.png" alt="Shopify" />
+        <img class="logo-img" src="assets/partners/wix.png" alt="Wix Partners" />
+        <img class="logo-img" src="assets/partners/vtex.png" alt="VTEX" />
+      </div>
+    </section>
+
+  </div>
+
+<script>
+(function(){
+  "use strict";
+
+  var wrap = document.getElementById('globeWrap');
+  var canvas = document.getElementById('globeCanvas');
+  var ctx = canvas.getContext('2d');
+
+  // reads the pin color from the CSS custom property (--pin, in :root) instead of hardcoding it,
+  // so changing that one variable re-colors the active pin + its pulse ring everywhere
+  function hexToRgbStr(hex, fallback){
+    var m = /^#?([0-9a-f]{3}|[0-9a-f]{6})$/i.exec((hex || '').trim());
+    if (!m) return fallback;
+    var h = m[1];
+    if (h.length === 3) h = h.split('').map(function(c){ return c + c; }).join('');
+    var num = parseInt(h, 16);
+    return ((num >> 16) & 255) + ',' + ((num >> 8) & 255) + ',' + (num & 255);
+  }
+  var PIN_RGB = hexToRgbStr(
+    getComputedStyle(document.documentElement).getPropertyValue('--pin'),
+    '217,143,19'
+  );
+
+  // a random sales figure per city, generated once at load and kept stable for the session —
+  // formatted abbreviated (250k / 1.5M) rather than spelled out, e.g. "+$250k USD in sales"
+  function randSales(){
+    var v = 350000 + Math.random() * (2000000 - 350000);
+    var k = Math.round(v / 10000) * 10; // nearest 10k, e.g. 250, 1500
+    var amount;
+    if (k >= 1000){
+      var m = k / 1000;
+      amount = (m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)) + 'M';
+    } else {
+      amount = k + 'k';
+    }
+    return '+$' + amount + ' USD in sales';
+  }
+
+  // `note` is the card's second line, per city — edit any of these freely (name, coordinates,
+  // or note). Coordinates are approximate city centers.
+  var PINS = [
+    { name:'Cali, CO',        lat:3.45,   lon:-76.53,  flag:'🇨🇴', note:randSales() },
+    { name:'Medellín, CO',    lat:6.25,   lon:-75.56,  flag:'🇨🇴', note:randSales() },
+    { name:'Bogotá, CO',      lat:4.71,   lon:-74.07,  flag:'🇨🇴', note:randSales() },
+    { name:'Cartagena, CO',   lat:10.39,  lon:-75.51,  flag:'🇨🇴', note:randSales() },
+    { name:'Popayán, CO',     lat:2.44,   lon:-76.61,  flag:'🇨🇴', note:randSales() },
+    { name:'Barranquilla, CO',lat:10.96,  lon:-74.80,  flag:'🇨🇴', note:randSales() },
+    { name:'Miami, US',       lat:25.76,  lon:-80.19,  flag:'🇺🇸', note:randSales() },
+    { name:'New York, US',    lat:40.71,  lon:-74.01,  flag:'🇺🇸', note:randSales() },
+    { name:'Tampa, US',       lat:27.95,  lon:-82.46,  flag:'🇺🇸', note:randSales() },
+    { name:'Washington, US',  lat:38.90,  lon:-77.04,  flag:'🇺🇸', note:randSales() },
+    { name:'Delaware, US',    lat:39.75,  lon:-75.55,  flag:'🇺🇸', note:randSales() },
+    { name:'Paris, FR',       lat:48.86,  lon:2.35,    flag:'🇫🇷', note:randSales() },
+    { name:'Madrid, ES',      lat:40.42,  lon:-3.70,   flag:'🇪🇸', note:randSales() },
+    { name:'Barcelona, ES',   lat:41.39,  lon:2.17,    flag:'🇪🇸', note:randSales() },
+    { name:'Lisboa, PT',      lat:38.72,  lon:-9.14,   flag:'🇵🇹', note:randSales() },
+    { name:'Porto, PT',       lat:41.15,  lon:-8.61,   flag:'🇵🇹', note:randSales() },
+    { name:'Montevideo, UY',  lat:-34.90, lon:-56.16,  flag:'🇺🇾', note:randSales() },
+    { name:'San José, CR',    lat:9.93,   lon:-84.08,  flag:'🇨🇷', note:randSales() },
+    { name:'Ciudad de México, MX', lat:19.43, lon:-99.13, flag:'🇲🇽', note:randSales() },
+    { name:'Cancún, MX',      lat:21.16,  lon:-86.85,  flag:'🇲🇽', note:randSales() },
+    { name:'Toronto, CA',     lat:43.65,  lon:-79.38,  flag:'🇨🇦', note:randSales() },
+    { name:'Ottawa, CA',      lat:45.42,  lon:-75.70,  flag:'🇨🇦', note:randSales() },
+    { name:'Montreal, CA',    lat:45.50,  lon:-73.57,  flag:'🇨🇦', note:randSales() },
+    { name:'Vancouver, CA',   lat:49.28,  lon:-123.12, flag:'🇨🇦', note:randSales() },
+    { name:'El Cairo, EG',    lat:30.04,  lon:31.24,   flag:'🇪🇬', note:randSales() },
+    { name:'Delhi, IN',       lat:28.61,  lon:77.21,   flag:'🇮🇳', note:randSales() },
+    { name:'Santiago, CL',    lat:-33.45, lon:-70.67,  flag:'🇨🇱', note:randSales() },
+    { name:'Antofagasta, CL', lat:-23.65, lon:-70.40,  flag:'🇨🇱', note:randSales() },
+    { name:'Quito, EC',       lat:-0.18,  lon:-78.47,  flag:'🇪🇨', note:randSales() }
+  ];
+
+  // the tour order round-robins across countries (one pin per country per pass) instead of
+  // walking PINS top-to-bottom, so consecutive stops are never the same country — e.g. Cali
+  // jumps straight to a different country's city, instead of crawling through every Colombian
+  // city before leaving. PINS itself stays grouped by country for easy editing.
+  function interleaveByCountry(pins){
+    var buckets = [];
+    var byFlag = {};
+    pins.forEach(function(pin, i){
+      if (!byFlag[pin.flag]){ byFlag[pin.flag] = []; buckets.push(byFlag[pin.flag]); }
+      byFlag[pin.flag].push(i);
+    });
+    var order = [];
+    var remaining = true;
+    while (remaining){
+      remaining = false;
+      for (var b = 0; b < buckets.length; b++){
+        if (buckets[b].length){
+          order.push(buckets[b].shift());
+          remaining = true;
+        }
+      }
+    }
+    return order;
+  }
+  var TOUR_ORDER = interleaveByCountry(PINS);
+
+  // background dot grid — real landmass coastlines (lat/lon), ~2.6deg resolution,
+  // generated from a land/sea mask so the globe reads as an actual world map, not a plain sphere
+  var LAND_STR = "-53.4,-68.2;-50.8,-73.4;-50.8,-70.8;-48.2,-70.8;-48.2,-68.2;-45.6,-73.4;-45.6,-70.8;-45.6,-68.2;-45.6,168.4;-43.0,-73.4;-43.0,-70.8;-43.0,-68.2;-43.0,-65.6;-43.0,171.0;-40.4,-73.4;-40.4,-70.8;-40.4,-68.2;-40.4,-65.6;-40.4,-63.0;-40.4,176.2;-37.8,-73.4;-37.8,-70.8;-37.8,-68.2;-37.8,-65.6;-37.8,-63.0;-37.8,-60.4;-37.8,-57.8;-37.8,142.4;-37.8,145.0;-37.8,147.6;-37.8,176.2;-35.2,-70.8;-35.2,-68.2;-35.2,-65.6;-35.2,-63.0;-35.2,-60.4;-35.2,-57.8;-35.2,139.8;-35.2,142.4;-35.2,145.0;-35.2,147.6;-35.2,150.2;-35.2,173.6;-32.6,-70.8;-32.6,-68.2;-32.6,-65.6;-32.6,-63.0;-32.6,-60.4;-32.6,-57.8;-32.6,-55.2;-32.6,-52.6;-32.6,20.2;-32.6,22.8;-32.6,25.4;-32.6,28.0;-32.6,116.4;-32.6,119.0;-32.6,121.6;-32.6,124.2;-32.6,134.6;-32.6,137.2;-32.6,139.8;-32.6,142.4;-32.6,145.0;-32.6,147.6;-32.6,150.2;-30.0,-70.8;-30.0,-68.2;-30.0,-65.6;-30.0,-63.0;-30.0,-60.4;-30.0,-57.8;-30.0,-55.2;-30.0,-52.6;-30.0,17.6;-30.0,20.2;-30.0,22.8;-30.0,25.4;-30.0,28.0;-30.0,30.6;-30.0,116.4;-30.0,119.0;-30.0,121.6;-30.0,124.2;-30.0,126.8;-30.0,129.4;-30.0,132.0;-30.0,134.6;-30.0,137.2;-30.0,139.8;-30.0,142.4;-30.0,145.0;-30.0,147.6;-30.0,150.2;-30.0,152.8;-27.4,-70.8;-27.4,-68.2;-27.4,-65.6;-27.4,-63.0;-27.4,-60.4;-27.4,-57.8;-27.4,-55.2;-27.4,-52.6;-27.4,-50.0;-27.4,17.6;-27.4,20.2;-27.4,22.8;-27.4,25.4;-27.4,28.0;-27.4,30.6;-27.4,116.4;-27.4,119.0;-27.4,121.6;-27.4,124.2;-27.4,126.8;-27.4,129.4;-27.4,132.0;-27.4,134.6;-27.4,137.2;-27.4,139.8;-27.4,142.4;-27.4,145.0;-27.4,147.6;-27.4,150.2;-27.4,152.8;-24.8,-68.2;-24.8,-65.6;-24.8,-63.0;-24.8,-60.4;-24.8,-57.8;-24.8,-55.2;-24.8,-52.6;-24.8,-50.0;-24.8,15.0;-24.8,17.6;-24.8,20.2;-24.8,22.8;-24.8,25.4;-24.8,28.0;-24.8,30.6;-24.8,33.2;-24.8,46.2;-24.8,113.8;-24.8,116.4;-24.8,119.0;-24.8,121.6;-24.8,124.2;-24.8,126.8;-24.8,129.4;-24.8,132.0;-24.8,134.6;-24.8,137.2;-24.8,139.8;-24.8,142.4;-24.8,145.0;-24.8,147.6;-24.8,150.2;-22.2,-68.2;-22.2,-65.6;-22.2,-63.0;-22.2,-60.4;-22.2,-57.8;-22.2,-55.2;-22.2,-52.6;-22.2,-50.0;-22.2,-47.4;-22.2,-44.8;-22.2,-42.2;-22.2,15.0;-22.2,17.6;-22.2,20.2;-22.2,22.8;-22.2,25.4;-22.2,28.0;-22.2,30.6;-22.2,33.2;-22.2,43.6;-22.2,46.2;-22.2,116.4;-22.2,119.0;-22.2,121.6;-22.2,124.2;-22.2,126.8;-22.2,129.4;-22.2,132.0;-22.2,134.6;-22.2,137.2;-22.2,139.8;-22.2,142.4;-22.2,145.0;-22.2,147.6;-19.6,-68.2;-19.6,-65.6;-19.6,-63.0;-19.6,-60.4;-19.6,-57.8;-19.6,-55.2;-19.6,-52.6;-19.6,-50.0;-19.6,-47.4;-19.6,-44.8;-19.6,-42.2;-19.6,15.0;-19.6,17.6;-19.6,20.2;-19.6,22.8;-19.6,25.4;-19.6,28.0;-19.6,30.6;-19.6,33.2;-19.6,46.2;-19.6,48.8;-19.6,121.6;-19.6,124.2;-19.6,126.8;-19.6,129.4;-19.6,132.0;-19.6,134.6;-19.6,137.2;-19.6,139.8;-19.6,142.4;-19.6,145.0;-17.0,-70.8;-17.0,-68.2;-17.0,-65.6;-17.0,-63.0;-17.0,-60.4;-17.0,-57.8;-17.0,-55.2;-17.0,-52.6;-17.0,-50.0;-17.0,-47.4;-17.0,-44.8;-17.0,-42.2;-17.0,-39.6;-17.0,12.4;-17.0,15.0;-17.0,17.6;-17.0,20.2;-17.0,22.8;-17.0,25.4;-17.0,28.0;-17.0,30.6;-17.0,33.2;-17.0,35.8;-17.0,38.4;-17.0,46.2;-17.0,48.8;-17.0,124.2;-17.0,126.8;-17.0,129.4;-17.0,132.0;-17.0,134.6;-17.0,137.2;-17.0,142.4;-17.0,145.0;-14.4,-76.0;-14.4,-73.4;-14.4,-70.8;-14.4,-68.2;-14.4,-65.6;-14.4,-63.0;-14.4,-60.4;-14.4,-57.8;-14.4,-55.2;-14.4,-52.6;-14.4,-50.0;-14.4,-47.4;-14.4,-44.8;-14.4,-42.2;-14.4,-39.6;-14.4,12.4;-14.4,15.0;-14.4,17.6;-14.4,20.2;-14.4,22.8;-14.4,25.4;-14.4,28.0;-14.4,30.6;-14.4,33.2;-14.4,35.8;-14.4,38.4;-14.4,48.8;-14.4,126.8;-14.4,129.4;-14.4,132.0;-14.4,134.6;-14.4,142.4;-11.8,-76.0;-11.8,-73.4;-11.8,-70.8;-11.8,-68.2;-11.8,-65.6;-11.8,-63.0;-11.8,-60.4;-11.8,-57.8;-11.8,-55.2;-11.8,-52.6;-11.8,-50.0;-11.8,-47.4;-11.8,-44.8;-11.8,-42.2;-11.8,-39.6;-11.8,15.0;-11.8,17.6;-11.8,20.2;-11.8,22.8;-11.8,25.4;-11.8,28.0;-11.8,30.6;-11.8,33.2;-11.8,35.8;-11.8,38.4;-11.8,142.4;-9.2,-78.6;-9.2,-76.0;-9.2,-73.4;-9.2,-70.8;-9.2,-68.2;-9.2,-65.6;-9.2,-63.0;-9.2,-60.4;-9.2,-57.8;-9.2,-55.2;-9.2,-52.6;-9.2,-50.0;-9.2,-47.4;-9.2,-44.8;-9.2,-42.2;-9.2,-39.6;-9.2,-37.0;-9.2,15.0;-9.2,17.6;-9.2,20.2;-9.2,22.8;-9.2,25.4;-9.2,28.0;-9.2,30.6;-9.2,33.2;-9.2,35.8;-9.2,38.4;-9.2,142.4;-9.2,147.6;-9.2,150.2;-9.2,152.8;-6.6,-78.6;-6.6,-76.0;-6.6,-73.4;-6.6,-70.8;-6.6,-68.2;-6.6,-65.6;-6.6,-63.0;-6.6,-60.4;-6.6,-57.8;-6.6,-55.2;-6.6,-52.6;-6.6,-50.0;-6.6,-47.4;-6.6,-44.8;-6.6,-42.2;-6.6,-39.6;-6.6,-37.0;-6.6,15.0;-6.6,17.6;-6.6,20.2;-6.6,22.8;-6.6,25.4;-6.6,28.0;-6.6,30.6;-6.6,33.2;-6.6,35.8;-6.6,38.4;-6.6,106.0;-6.6,139.8;-6.6,142.4;-6.6,145.0;-6.6,147.6;-6.6,155.4;-4.0,-78.6;-4.0,-76.0;-4.0,-73.4;-4.0,-70.8;-4.0,-68.2;-4.0,-65.6;-4.0,-63.0;-4.0,-60.4;-4.0,-57.8;-4.0,-55.2;-4.0,-52.6;-4.0,-50.0;-4.0,-47.4;-4.0,-44.8;-4.0,-42.2;-4.0,-39.6;-4.0,12.4;-4.0,15.0;-4.0,17.6;-4.0,20.2;-4.0,22.8;-4.0,25.4;-4.0,28.0;-4.0,30.6;-4.0,33.2;-4.0,35.8;-4.0,38.4;-4.0,103.4;-4.0,121.6;-4.0,137.2;-4.0,139.8;-4.0,142.4;-4.0,152.8;-1.4,-78.6;-1.4,-76.0;-1.4,-73.4;-1.4,-70.8;-1.4,-68.2;-1.4,-65.6;-1.4,-63.0;-1.4,-60.4;-1.4,-57.8;-1.4,-55.2;-1.4,-52.6;-1.4,-50.0;-1.4,-47.4;-1.4,9.8;-1.4,12.4;-1.4,15.0;-1.4,17.6;-1.4,20.2;-1.4,22.8;-1.4,25.4;-1.4,28.0;-1.4,30.6;-1.4,33.2;-1.4,35.8;-1.4,38.4;-1.4,41.0;-1.4,100.8;-1.4,103.4;-1.4,111.2;-1.4,113.8;-1.4,116.4;-1.4,121.6;-1.4,132.0;1.2,-78.6;1.2,-76.0;1.2,-73.4;1.2,-70.8;1.2,-68.2;1.2,-65.6;1.2,-63.0;1.2,-60.4;1.2,-57.8;1.2,-55.2;1.2,-52.6;1.2,-50.0;1.2,9.8;1.2,12.4;1.2,15.0;1.2,17.6;1.2,20.2;1.2,22.8;1.2,25.4;1.2,28.0;1.2,30.6;1.2,33.2;1.2,35.8;1.2,38.4;1.2,41.0;1.2,43.6;1.2,100.8;1.2,111.2;1.2,113.8;1.2,116.4;3.8,-76.0;3.8,-73.4;3.8,-70.8;3.8,-68.2;3.8,-65.6;3.8,-63.0;3.8,-60.4;3.8,-57.8;3.8,-55.2;3.8,-52.6;3.8,9.8;3.8,12.4;3.8,15.0;3.8,17.6;3.8,20.2;3.8,22.8;3.8,25.4;3.8,28.0;3.8,30.6;3.8,33.2;3.8,35.8;3.8,38.4;3.8,41.0;3.8,43.6;3.8,46.2;3.8,98.2;3.8,113.8;3.8,116.4;3.8,126.8;6.4,-76.0;6.4,-73.4;6.4,-70.8;6.4,-68.2;6.4,-65.6;6.4,-63.0;6.4,-60.4;6.4,-57.8;6.4,-8.4;6.4,-5.8;6.4,-3.2;6.4,-0.6;6.4,2.0;6.4,4.6;6.4,7.2;6.4,9.8;6.4,12.4;6.4,15.0;6.4,17.6;6.4,20.2;6.4,22.8;6.4,25.4;6.4,28.0;6.4,30.6;6.4,33.2;6.4,35.8;6.4,38.4;6.4,41.0;6.4,43.6;6.4,46.2;6.4,48.8;6.4,80.0;6.4,100.8;6.4,116.4;6.4,124.2;9.0,-78.6;9.0,-76.0;9.0,-73.4;9.0,-70.8;9.0,-68.2;9.0,-65.6;9.0,-63.0;9.0,-11.0;9.0,-8.4;9.0,-5.8;9.0,-3.2;9.0,-0.6;9.0,2.0;9.0,4.6;9.0,7.2;9.0,9.8;9.0,12.4;9.0,15.0;9.0,17.6;9.0,20.2;9.0,22.8;9.0,25.4;9.0,28.0;9.0,30.6;9.0,33.2;9.0,35.8;9.0,38.4;9.0,41.0;9.0,43.6;9.0,46.2;9.0,48.8;9.0,77.4;11.6,-83.8;11.6,-13.6;11.6,-11.0;11.6,-8.4;11.6,-5.8;11.6,-3.2;11.6,-0.6;11.6,2.0;11.6,4.6;11.6,7.2;11.6,9.8;11.6,12.4;11.6,15.0;11.6,17.6;11.6,20.2;11.6,22.8;11.6,25.4;11.6,28.0;11.6,30.6;11.6,33.2;11.6,35.8;11.6,38.4;11.6,41.0;11.6,77.4;11.6,103.4;11.6,106.0;11.6,108.6;14.2,-91.6;14.2,-89.0;14.2,-86.4;14.2,-83.8;14.2,-16.2;14.2,-13.6;14.2,-11.0;14.2,-8.4;14.2,-5.8;14.2,-3.2;14.2,-0.6;14.2,2.0;14.2,4.6;14.2,7.2;14.2,9.8;14.2,12.4;14.2,15.0;14.2,17.6;14.2,20.2;14.2,22.8;14.2,25.4;14.2,28.0;14.2,30.6;14.2,33.2;14.2,35.8;14.2,38.4;14.2,41.0;14.2,43.6;14.2,46.2;14.2,48.8;14.2,74.8;14.2,77.4;14.2,80.0;14.2,98.2;14.2,100.8;14.2,103.4;14.2,106.0;14.2,108.6;14.2,121.6;16.8,-99.4;16.8,-96.8;16.8,-94.2;16.8,-91.6;16.8,-89.0;16.8,-16.2;16.8,-13.6;16.8,-11.0;16.8,-8.4;16.8,-5.8;16.8,-3.2;16.8,-0.6;16.8,2.0;16.8,4.6;16.8,7.2;16.8,9.8;16.8,12.4;16.8,15.0;16.8,17.6;16.8,20.2;16.8,22.8;16.8,25.4;16.8,28.0;16.8,30.6;16.8,33.2;16.8,35.8;16.8,38.4;16.8,43.6;16.8,46.2;16.8,48.8;16.8,51.4;16.8,74.8;16.8,77.4;16.8,80.0;16.8,95.6;16.8,98.2;16.8,100.8;16.8,103.4;16.8,106.0;16.8,121.6;19.4,-104.6;19.4,-102.0;19.4,-99.4;19.4,-96.8;19.4,-89.0;19.4,-70.8;19.4,-16.2;19.4,-13.6;19.4,-11.0;19.4,-8.4;19.4,-5.8;19.4,-3.2;19.4,-0.6;19.4,2.0;19.4,4.6;19.4,7.2;19.4,9.8;19.4,12.4;19.4,15.0;19.4,17.6;19.4,20.2;19.4,22.8;19.4,25.4;19.4,28.0;19.4,30.6;19.4,33.2;19.4,35.8;19.4,41.0;19.4,43.6;19.4,46.2;19.4,48.8;19.4,51.4;19.4,54.0;19.4,56.6;19.4,74.8;19.4,77.4;19.4,80.0;19.4,82.6;19.4,95.6;19.4,98.2;19.4,100.8;19.4,103.4;22.0,-104.6;22.0,-102.0;22.0,-99.4;22.0,-78.6;22.0,-16.2;22.0,-13.6;22.0,-11.0;22.0,-8.4;22.0,-5.8;22.0,-3.2;22.0,-0.6;22.0,2.0;22.0,4.6;22.0,7.2;22.0,9.8;22.0,12.4;22.0,15.0;22.0,17.6;22.0,20.2;22.0,22.8;22.0,25.4;22.0,28.0;22.0,30.6;22.0,33.2;22.0,35.8;22.0,41.0;22.0,43.6;22.0,46.2;22.0,48.8;22.0,51.4;22.0,54.0;22.0,56.6;22.0,59.2;22.0,69.6;22.0,72.2;22.0,74.8;22.0,77.4;22.0,80.0;22.0,82.6;22.0,85.2;22.0,87.8;22.0,93.0;22.0,95.6;22.0,98.2;22.0,100.8;22.0,103.4;22.0,106.0;22.0,108.6;22.0,111.2;24.6,-107.2;24.6,-104.6;24.6,-102.0;24.6,-99.4;24.6,-13.6;24.6,-11.0;24.6,-8.4;24.6,-5.8;24.6,-3.2;24.6,-0.6;24.6,2.0;24.6,4.6;24.6,7.2;24.6,9.8;24.6,12.4;24.6,15.0;24.6,17.6;24.6,20.2;24.6,22.8;24.6,25.4;24.6,28.0;24.6,30.6;24.6,33.2;24.6,38.4;24.6,41.0;24.6,43.6;24.6,46.2;24.6,48.8;24.6,69.6;24.6,72.2;24.6,74.8;24.6,77.4;24.6,80.0;24.6,82.6;24.6,85.2;24.6,87.8;24.6,90.4;24.6,93.0;24.6,95.6;24.6,98.2;24.6,100.8;24.6,103.4;24.6,106.0;24.6,108.6;24.6,111.2;24.6,113.8;24.6,116.4;24.6,121.6;27.2,-112.4;27.2,-109.8;27.2,-107.2;27.2,-104.6;27.2,-102.0;27.2,-99.4;27.2,-81.2;27.2,-11.0;27.2,-8.4;27.2,-5.8;27.2,-3.2;27.2,-0.6;27.2,2.0;27.2,4.6;27.2,7.2;27.2,9.8;27.2,12.4;27.2,15.0;27.2,17.6;27.2,20.2;27.2,22.8;27.2,25.4;27.2,28.0;27.2,30.6;27.2,33.2;27.2,38.4;27.2,41.0;27.2,43.6;27.2,46.2;27.2,48.8;27.2,54.0;27.2,56.6;27.2,59.2;27.2,61.8;27.2,64.4;27.2,67.0;27.2,69.6;27.2,72.2;27.2,74.8;27.2,77.4;27.2,80.0;27.2,82.6;27.2,85.2;27.2,87.8;27.2,90.4;27.2,93.0;27.2,95.6;27.2,98.2;27.2,100.8;27.2,103.4;27.2,106.0;27.2,108.6;27.2,111.2;27.2,113.8;27.2,116.4;27.2,119.0;29.8,-115.0;29.8,-112.4;29.8,-109.8;29.8,-107.2;29.8,-104.6;29.8,-102.0;29.8,-99.4;29.8,-96.8;29.8,-94.2;29.8,-91.6;29.8,-8.4;29.8,-5.8;29.8,-3.2;29.8,-0.6;29.8,2.0;29.8,4.6;29.8,7.2;29.8,9.8;29.8,12.4;29.8,15.0;29.8,17.6;29.8,20.2;29.8,22.8;29.8,25.4;29.8,28.0;29.8,30.6;29.8,33.2;29.8,35.8;29.8,38.4;29.8,41.0;29.8,43.6;29.8,46.2;29.8,51.4;29.8,54.0;29.8,56.6;29.8,59.2;29.8,61.8;29.8,64.4;29.8,67.0;29.8,69.6;29.8,72.2;29.8,74.8;29.8,77.4;29.8,80.0;29.8,82.6;29.8,85.2;29.8,87.8;29.8,90.4;29.8,93.0;29.8,95.6;29.8,98.2;29.8,100.8;29.8,103.4;29.8,106.0;29.8,108.6;29.8,111.2;29.8,113.8;29.8,116.4;29.8,119.0;29.8,121.6;32.4,-115.0;32.4,-112.4;32.4,-109.8;32.4,-107.2;32.4,-104.6;32.4,-102.0;32.4,-99.4;32.4,-96.8;32.4,-94.2;32.4,-91.6;32.4,-89.0;32.4,-86.4;32.4,-83.8;32.4,-81.2;32.4,-8.4;32.4,-5.8;32.4,-3.2;32.4,-0.6;32.4,2.0;32.4,4.6;32.4,7.2;32.4,9.8;32.4,12.4;32.4,15.0;32.4,22.8;32.4,35.8;32.4,38.4;32.4,41.0;32.4,43.6;32.4,46.2;32.4,48.8;32.4,51.4;32.4,54.0;32.4,56.6;32.4,59.2;32.4,61.8;32.4,64.4;32.4,67.0;32.4,69.6;32.4,72.2;32.4,74.8;32.4,77.4;32.4,80.0;32.4,82.6;32.4,85.2;32.4,87.8;32.4,90.4;32.4,93.0;32.4,95.6;32.4,98.2;32.4,100.8;32.4,103.4;32.4,106.0;32.4,108.6;32.4,111.2;32.4,113.8;32.4,116.4;32.4,119.0;35.0,-120.2;35.0,-117.6;35.0,-115.0;35.0,-112.4;35.0,-109.8;35.0,-107.2;35.0,-104.6;35.0,-102.0;35.0,-99.4;35.0,-96.8;35.0,-94.2;35.0,-91.6;35.0,-89.0;35.0,-86.4;35.0,-83.8;35.0,-81.2;35.0,-78.6;35.0,-5.8;35.0,-3.2;35.0,-0.6;35.0,2.0;35.0,4.6;35.0,7.2;35.0,9.8;35.0,25.4;35.0,33.2;35.0,38.4;35.0,41.0;35.0,43.6;35.0,46.2;35.0,48.8;35.0,51.4;35.0,54.0;35.0,56.6;35.0,59.2;35.0,61.8;35.0,64.4;35.0,67.0;35.0,69.6;35.0,72.2;35.0,74.8;35.0,77.4;35.0,80.0;35.0,82.6;35.0,85.2;35.0,87.8;35.0,90.4;35.0,93.0;35.0,95.6;35.0,98.2;35.0,100.8;35.0,103.4;35.0,106.0;35.0,108.6;35.0,111.2;35.0,113.8;35.0,116.4;35.0,119.0;35.0,126.8;35.0,134.6;35.0,137.2;37.6,-120.2;37.6,-117.6;37.6,-115.0;37.6,-112.4;37.6,-109.8;37.6,-107.2;37.6,-104.6;37.6,-102.0;37.6,-99.4;37.6,-96.8;37.6,-94.2;37.6,-91.6;37.6,-89.0;37.6,-86.4;37.6,-83.8;37.6,-81.2;37.6,-78.6;37.6,-8.4;37.6,-5.8;37.6,-3.2;37.6,15.0;37.6,22.8;37.6,28.0;37.6,30.6;37.6,33.2;37.6,35.8;37.6,38.4;37.6,41.0;37.6,43.6;37.6,46.2;37.6,48.8;37.6,51.4;37.6,54.0;37.6,56.6;37.6,59.2;37.6,61.8;37.6,64.4;37.6,67.0;37.6,69.6;37.6,72.2;37.6,74.8;37.6,77.4;37.6,80.0;37.6,82.6;37.6,85.2;37.6,87.8;37.6,90.4;37.6,93.0;37.6,95.6;37.6,98.2;37.6,100.8;37.6,103.4;37.6,106.0;37.6,108.6;37.6,111.2;37.6,113.8;37.6,116.4;37.6,126.8;37.6,139.8;40.2,-122.8;40.2,-120.2;40.2,-117.6;40.2,-115.0;40.2,-112.4;40.2,-109.8;40.2,-107.2;40.2,-104.6;40.2,-102.0;40.2,-99.4;40.2,-96.8;40.2,-94.2;40.2,-91.6;40.2,-89.0;40.2,-86.4;40.2,-83.8;40.2,-81.2;40.2,-78.6;40.2,-76.0;40.2,-8.4;40.2,-5.8;40.2,-3.2;40.2,-0.6;40.2,15.0;40.2,20.2;40.2,28.0;40.2,30.6;40.2,33.2;40.2,35.8;40.2,38.4;40.2,41.0;40.2,43.6;40.2,46.2;40.2,48.8;40.2,51.4;40.2,54.0;40.2,56.6;40.2,59.2;40.2,61.8;40.2,64.4;40.2,67.0;40.2,69.6;40.2,72.2;40.2,74.8;40.2,77.4;40.2,80.0;40.2,82.6;40.2,85.2;40.2,87.8;40.2,90.4;40.2,93.0;40.2,95.6;40.2,98.2;40.2,100.8;40.2,103.4;40.2,106.0;40.2,108.6;40.2,111.2;40.2,113.8;40.2,116.4;40.2,119.0;40.2,124.2;40.2,126.8;42.8,-122.8;42.8,-120.2;42.8,-117.6;42.8,-115.0;42.8,-112.4;42.8,-109.8;42.8,-107.2;42.8,-104.6;42.8,-102.0;42.8,-99.4;42.8,-96.8;42.8,-94.2;42.8,-91.6;42.8,-89.0;42.8,-86.4;42.8,-83.8;42.8,-81.2;42.8,-78.6;42.8,-76.0;42.8,-73.4;42.8,-8.4;42.8,-5.8;42.8,-3.2;42.8,-0.6;42.8,2.0;42.8,12.4;42.8,20.2;42.8,22.8;42.8,25.4;42.8,43.6;42.8,46.2;42.8,48.8;42.8,51.4;42.8,54.0;42.8,56.6;42.8,59.2;42.8,61.8;42.8,64.4;42.8,67.0;42.8,69.6;42.8,72.2;42.8,74.8;42.8,77.4;42.8,80.0;42.8,82.6;42.8,85.2;42.8,87.8;42.8,90.4;42.8,93.0;42.8,95.6;42.8,98.2;42.8,100.8;42.8,103.4;42.8,106.0;42.8,108.6;42.8,111.2;42.8,113.8;42.8,116.4;42.8,119.0;42.8,121.6;42.8,124.2;42.8,126.8;42.8,129.4;42.8,142.4;45.4,-122.8;45.4,-120.2;45.4,-117.6;45.4,-115.0;45.4,-112.4;45.4,-109.8;45.4,-107.2;45.4,-104.6;45.4,-102.0;45.4,-99.4;45.4,-96.8;45.4,-94.2;45.4,-91.6;45.4,-89.0;45.4,-86.4;45.4,-83.8;45.4,-81.2;45.4,-78.6;45.4,-76.0;45.4,-73.4;45.4,-70.8;45.4,-68.2;45.4,-65.6;45.4,-63.0;45.4,-0.6;45.4,2.0;45.4,4.6;45.4,7.2;45.4,9.8;45.4,15.0;45.4,17.6;45.4,20.2;45.4,22.8;45.4,25.4;45.4,28.0;45.4,33.2;45.4,35.8;45.4,38.4;45.4,41.0;45.4,43.6;45.4,46.2;45.4,48.8;45.4,51.4;45.4,54.0;45.4,56.6;45.4,59.2;45.4,61.8;45.4,64.4;45.4,67.0;45.4,69.6;45.4,72.2;45.4,74.8;45.4,77.4;45.4,80.0;45.4,82.6;45.4,85.2;45.4,87.8;45.4,90.4;45.4,93.0;45.4,95.6;45.4,98.2;45.4,100.8;45.4,103.4;45.4,106.0;45.4,108.6;45.4,111.2;45.4,113.8;45.4,116.4;45.4,119.0;45.4,121.6;45.4,124.2;45.4,126.8;45.4,129.4;45.4,132.0;45.4,134.6;48.0,-122.8;48.0,-120.2;48.0,-117.6;48.0,-115.0;48.0,-112.4;48.0,-109.8;48.0,-107.2;48.0,-104.6;48.0,-102.0;48.0,-99.4;48.0,-96.8;48.0,-94.2;48.0,-91.6;48.0,-89.0;48.0,-86.4;48.0,-83.8;48.0,-81.2;48.0,-78.6;48.0,-76.0;48.0,-73.4;48.0,-70.8;48.0,-68.2;48.0,-57.8;48.0,-55.2;48.0,-3.2;48.0,-0.6;48.0,2.0;48.0,4.6;48.0,7.2;48.0,9.8;48.0,12.4;48.0,15.0;48.0,17.6;48.0,20.2;48.0,22.8;48.0,25.4;48.0,28.0;48.0,30.6;48.0,33.2;48.0,35.8;48.0,38.4;48.0,41.0;48.0,43.6;48.0,46.2;48.0,48.8;48.0,51.4;48.0,54.0;48.0,56.6;48.0,59.2;48.0,61.8;48.0,64.4;48.0,67.0;48.0,69.6;48.0,72.2;48.0,74.8;48.0,77.4;48.0,80.0;48.0,82.6;48.0,85.2;48.0,87.8;48.0,90.4;48.0,93.0;48.0,95.6;48.0,98.2;48.0,100.8;48.0,103.4;48.0,106.0;48.0,108.6;48.0,111.2;48.0,113.8;48.0,116.4;48.0,119.0;48.0,121.6;48.0,124.2;48.0,126.8;48.0,129.4;48.0,132.0;48.0,134.6;48.0,137.2;48.0,142.4;50.6,-128.0;50.6,-125.4;50.6,-122.8;50.6,-120.2;50.6,-117.6;50.6,-115.0;50.6,-112.4;50.6,-109.8;50.6,-107.2;50.6,-104.6;50.6,-102.0;50.6,-99.4;50.6,-96.8;50.6,-94.2;50.6,-91.6;50.6,-89.0;50.6,-86.4;50.6,-83.8;50.6,-81.2;50.6,-78.6;50.6,-76.0;50.6,-73.4;50.6,-70.8;50.6,-68.2;50.6,-65.6;50.6,-63.0;50.6,-60.4;50.6,2.0;50.6,4.6;50.6,7.2;50.6,9.8;50.6,12.4;50.6,15.0;50.6,17.6;50.6,20.2;50.6,22.8;50.6,25.4;50.6,28.0;50.6,30.6;50.6,33.2;50.6,35.8;50.6,38.4;50.6,41.0;50.6,43.6;50.6,46.2;50.6,48.8;50.6,51.4;50.6,54.0;50.6,56.6;50.6,59.2;50.6,61.8;50.6,64.4;50.6,67.0;50.6,69.6;50.6,72.2;50.6,74.8;50.6,77.4;50.6,80.0;50.6,82.6;50.6,85.2;50.6,87.8;50.6,90.4;50.6,93.0;50.6,95.6;50.6,98.2;50.6,100.8;50.6,103.4;50.6,106.0;50.6,108.6;50.6,111.2;50.6,113.8;50.6,116.4;50.6,119.0;50.6,121.6;50.6,124.2;50.6,126.8;50.6,129.4;50.6,132.0;50.6,134.6;50.6,137.2;50.6,139.8;50.6,142.4;53.2,-128.0;53.2,-125.4;53.2,-122.8;53.2,-120.2;53.2,-117.6;53.2,-115.0;53.2,-112.4;53.2,-109.8;53.2,-107.2;53.2,-104.6;53.2,-102.0;53.2,-99.4;53.2,-96.8;53.2,-94.2;53.2,-91.6;53.2,-89.0;53.2,-86.4;53.2,-83.8;53.2,-78.6;53.2,-76.0;53.2,-73.4;53.2,-70.8;53.2,-68.2;53.2,-65.6;53.2,-63.0;53.2,-60.4;53.2,-57.8;53.2,-8.4;53.2,-3.2;53.2,-0.6;53.2,7.2;53.2,9.8;53.2,12.4;53.2,15.0;53.2,17.6;53.2,20.2;53.2,22.8;53.2,25.4;53.2,28.0;53.2,30.6;53.2,33.2;53.2,35.8;53.2,38.4;53.2,41.0;53.2,43.6;53.2,46.2;53.2,48.8;53.2,51.4;53.2,54.0;53.2,56.6;53.2,59.2;53.2,61.8;53.2,64.4;53.2,67.0;53.2,69.6;53.2,72.2;53.2,74.8;53.2,77.4;53.2,80.0;53.2,82.6;53.2,85.2;53.2,87.8;53.2,90.4;53.2,93.0;53.2,95.6;53.2,98.2;53.2,100.8;53.2,103.4;53.2,106.0;53.2,108.6;53.2,111.2;53.2,113.8;53.2,116.4;53.2,119.0;53.2,121.6;53.2,124.2;53.2,126.8;53.2,129.4;53.2,132.0;53.2,134.6;53.2,137.2;53.2,139.8;53.2,142.4;53.2,158.0;55.8,-161.8;55.8,-130.6;55.8,-128.0;55.8,-125.4;55.8,-122.8;55.8,-120.2;55.8,-117.6;55.8,-115.0;55.8,-112.4;55.8,-109.8;55.8,-107.2;55.8,-104.6;55.8,-102.0;55.8,-99.4;55.8,-96.8;55.8,-94.2;55.8,-91.6;55.8,-89.0;55.8,-76.0;55.8,-73.4;55.8,-70.8;55.8,-68.2;55.8,-65.6;55.8,-63.0;55.8,-60.4;55.8,-3.2;55.8,9.8;55.8,12.4;55.8,22.8;55.8,25.4;55.8,28.0;55.8,30.6;55.8,33.2;55.8,35.8;55.8,38.4;55.8,41.0;55.8,43.6;55.8,46.2;55.8,48.8;55.8,51.4;55.8,54.0;55.8,56.6;55.8,59.2;55.8,61.8;55.8,64.4;55.8,67.0;55.8,69.6;55.8,72.2;55.8,74.8;55.8,77.4;55.8,80.0;55.8,82.6;55.8,85.2;55.8,87.8;55.8,90.4;55.8,93.0;55.8,95.6;55.8,98.2;55.8,100.8;55.8,103.4;55.8,106.0;55.8,108.6;55.8,111.2;55.8,113.8;55.8,116.4;55.8,119.0;55.8,121.6;55.8,124.2;55.8,126.8;55.8,129.4;55.8,132.0;55.8,134.6;55.8,158.0;55.8,160.6;58.4,-156.6;58.4,-135.8;58.4,-133.2;58.4,-130.6;58.4,-128.0;58.4,-125.4;58.4,-122.8;58.4,-120.2;58.4,-117.6;58.4,-115.0;58.4,-112.4;58.4,-109.8;58.4,-107.2;58.4,-104.6;58.4,-102.0;58.4,-99.4;58.4,-96.8;58.4,-94.2;58.4,-76.0;58.4,-73.4;58.4,-70.8;58.4,-65.6;58.4,-63.0;58.4,-3.2;58.4,7.2;58.4,12.4;58.4,15.0;58.4,22.8;58.4,25.4;58.4,28.0;58.4,30.6;58.4,33.2;58.4,35.8;58.4,38.4;58.4,41.0;58.4,43.6;58.4,46.2;58.4,48.8;58.4,51.4;58.4,54.0;58.4,56.6;58.4,59.2;58.4,61.8;58.4,64.4;58.4,67.0;58.4,69.6;58.4,72.2;58.4,74.8;58.4,77.4;58.4,80.0;58.4,82.6;58.4,85.2;58.4,87.8;58.4,90.4;58.4,93.0;58.4,95.6;58.4,98.2;58.4,100.8;58.4,103.4;58.4,106.0;58.4,108.6;58.4,111.2;58.4,113.8;58.4,116.4;58.4,119.0;58.4,121.6;58.4,124.2;58.4,126.8;58.4,129.4;58.4,132.0;58.4,134.6;58.4,137.2;58.4,139.8;58.4,160.6;61.0,-164.4;61.0,-161.8;61.0,-159.2;61.0,-156.6;61.0,-154.0;61.0,-148.8;61.0,-146.2;61.0,-143.6;61.0,-141.0;61.0,-138.4;61.0,-135.8;61.0,-133.2;61.0,-130.6;61.0,-128.0;61.0,-125.4;61.0,-122.8;61.0,-120.2;61.0,-117.6;61.0,-115.0;61.0,-112.4;61.0,-109.8;61.0,-107.2;61.0,-104.6;61.0,-102.0;61.0,-99.4;61.0,-96.8;61.0,-94.2;61.0,-76.0;61.0,-73.4;61.0,-70.8;61.0,-47.4;61.0,-44.8;61.0,7.2;61.0,9.8;61.0,12.4;61.0,15.0;61.0,22.8;61.0,25.4;61.0,28.0;61.0,30.6;61.0,33.2;61.0,35.8;61.0,38.4;61.0,41.0;61.0,43.6;61.0,46.2;61.0,48.8;61.0,51.4;61.0,54.0;61.0,56.6;61.0,59.2;61.0,61.8;61.0,64.4;61.0,67.0;61.0,69.6;61.0,72.2;61.0,74.8;61.0,77.4;61.0,80.0;61.0,82.6;61.0,85.2;61.0,87.8;61.0,90.4;61.0,93.0;61.0,95.6;61.0,98.2;61.0,100.8;61.0,103.4;61.0,106.0;61.0,108.6;61.0,111.2;61.0,113.8;61.0,116.4;61.0,119.0;61.0,121.6;61.0,124.2;61.0,126.8;61.0,129.4;61.0,132.0;61.0,134.6;61.0,137.2;61.0,139.8;61.0,142.4;61.0,145.0;61.0,147.6;61.0,150.2;61.0,152.8;61.0,155.4;61.0,160.6;61.0,165.8;61.0,168.4;61.0,171.0;63.6,-159.2;63.6,-156.6;63.6,-154.0;63.6,-151.4;63.6,-148.8;63.6,-146.2;63.6,-143.6;63.6,-141.0;63.6,-138.4;63.6,-135.8;63.6,-133.2;63.6,-130.6;63.6,-128.0;63.6,-125.4;63.6,-122.8;63.6,-120.2;63.6,-117.6;63.6,-115.0;63.6,-112.4;63.6,-109.8;63.6,-107.2;63.6,-104.6;63.6,-102.0;63.6,-99.4;63.6,-96.8;63.6,-94.2;63.6,-81.2;63.6,-70.8;63.6,-68.2;63.6,-65.6;63.6,-50.0;63.6,-47.4;63.6,-44.8;63.6,-42.2;63.6,-18.8;63.6,12.4;63.6,15.0;63.6,17.6;63.6,22.8;63.6,25.4;63.6,28.0;63.6,30.6;63.6,33.2;63.6,35.8;63.6,38.4;63.6,41.0;63.6,43.6;63.6,46.2;63.6,48.8;63.6,51.4;63.6,54.0;63.6,56.6;63.6,59.2;63.6,61.8;63.6,64.4;63.6,67.0;63.6,69.6;63.6,72.2;63.6,74.8;63.6,77.4;63.6,80.0;63.6,82.6;63.6,85.2;63.6,87.8;63.6,90.4;63.6,93.0;63.6,95.6;63.6,98.2;63.6,100.8;63.6,103.4;63.6,106.0;63.6,108.6;63.6,111.2;63.6,113.8;63.6,116.4;63.6,119.0;63.6,121.6;63.6,124.2;63.6,126.8;63.6,129.4;63.6,132.0;63.6,134.6;63.6,137.2;63.6,139.8;63.6,142.4;63.6,145.0;63.6,147.6;63.6,150.2;63.6,152.8;63.6,155.4;63.6,158.0;63.6,160.6;63.6,163.2;63.6,165.8;63.6,168.4;63.6,171.0;63.6,173.6;63.6,176.2;66.2,-180.0;66.2,-177.4;66.2,-174.8;66.2,-172.2;66.2,-164.4;66.2,-159.2;66.2,-156.6;66.2,-154.0;66.2,-151.4;66.2,-148.8;66.2,-146.2;66.2,-143.6;66.2,-141.0;66.2,-138.4;66.2,-135.8;66.2,-133.2;66.2,-130.6;66.2,-128.0;66.2,-125.4;66.2,-122.8;66.2,-120.2;66.2,-117.6;66.2,-115.0;66.2,-112.4;66.2,-109.8;66.2,-107.2;66.2,-104.6;66.2,-102.0;66.2,-99.4;66.2,-96.8;66.2,-94.2;66.2,-91.6;66.2,-89.0;66.2,-86.4;66.2,-83.8;66.2,-73.4;66.2,-70.8;66.2,-68.2;66.2,-65.6;66.2,-63.0;66.2,-52.6;66.2,-50.0;66.2,-47.4;66.2,-44.8;66.2,-42.2;66.2,-39.6;66.2,-37.0;66.2,-16.2;66.2,15.0;66.2,17.6;66.2,20.2;66.2,22.8;66.2,25.4;66.2,28.0;66.2,30.6;66.2,33.2;66.2,38.4;66.2,46.2;66.2,48.8;66.2,51.4;66.2,54.0;66.2,56.6;66.2,59.2;66.2,61.8;66.2,64.4;66.2,67.0;66.2,69.6;66.2,72.2;66.2,74.8;66.2,77.4;66.2,80.0;66.2,82.6;66.2,85.2;66.2,87.8;66.2,90.4;66.2,93.0;66.2,95.6;66.2,98.2;66.2,100.8;66.2,103.4;66.2,106.0;66.2,108.6;66.2,111.2;66.2,113.8;66.2,116.4;66.2,119.0;66.2,121.6;66.2,124.2;66.2,126.8;66.2,129.4;66.2,132.0;66.2,134.6;66.2,137.2;66.2,139.8;66.2,142.4;66.2,145.0;66.2,147.6;66.2,150.2;66.2,152.8;66.2,155.4;66.2,158.0;66.2,160.6;66.2,163.2;66.2,165.8;66.2,168.4;66.2,171.0;66.2,173.6;66.2,176.2;66.2,178.8;68.8,-180.0;68.8,-164.4;68.8,-161.8;68.8,-159.2;68.8,-156.6;68.8,-154.0;68.8,-151.4;68.8,-148.8;68.8,-146.2;68.8,-143.6;68.8,-141.0;68.8,-138.4;68.8,-135.8;68.8,-133.2;68.8,-130.6;68.8,-128.0;68.8,-125.4;68.8,-122.8;68.8,-120.2;68.8,-117.6;68.8,-115.0;68.8,-112.4;68.8,-109.8;68.8,-102.0;68.8,-96.8;68.8,-94.2;68.8,-91.6;68.8,-89.0;68.8,-83.8;68.8,-76.0;68.8,-73.4;68.8,-70.8;68.8,-50.0;68.8,-47.4;68.8,-44.8;68.8,-42.2;68.8,-39.6;68.8,-37.0;68.8,-34.4;68.8,-31.8;68.8,-29.2;68.8,-26.6;68.8,15.0;68.8,17.6;68.8,20.2;68.8,22.8;68.8,25.4;68.8,28.0;68.8,30.6;68.8,33.2;68.8,35.8;68.8,48.8;68.8,59.2;68.8,61.8;68.8,64.4;68.8,67.0;68.8,69.6;68.8,72.2;68.8,80.0;68.8,82.6;68.8,85.2;68.8,87.8;68.8,90.4;68.8,93.0;68.8,95.6;68.8,98.2;68.8,100.8;68.8,103.4;68.8,106.0;68.8,108.6;68.8,111.2;68.8,113.8;68.8,116.4;68.8,119.0;68.8,121.6;68.8,124.2;68.8,126.8;68.8,129.4;68.8,132.0;68.8,134.6;68.8,137.2;68.8,139.8;68.8,142.4;68.8,145.0;68.8,147.6;68.8,150.2;68.8,152.8;68.8,155.4;68.8,158.0;68.8,160.6;68.8,163.2;68.8,165.8;68.8,168.4;68.8,171.0;68.8,173.6;68.8,176.2;68.8,178.8;71.4,-180.0;71.4,-122.8;71.4,-117.6;71.4,-115.0;71.4,-112.4;71.4,-109.8;71.4,-107.2;71.4,-104.6;71.4,-94.2;71.4,-89.0;71.4,-86.4;71.4,-83.8;71.4,-81.2;71.4,-78.6;71.4,-76.0;71.4,-73.4;71.4,-55.2;71.4,-52.6;71.4,-50.0;71.4,-47.4;71.4,-44.8;71.4,-42.2;71.4,-39.6;71.4,-37.0;71.4,-34.4;71.4,-31.8;71.4,-29.2;71.4,-26.6;71.4,-24.0;71.4,54.0;71.4,69.6;71.4,74.8;71.4,77.4;71.4,80.0;71.4,82.6;71.4,85.2;71.4,87.8;71.4,90.4;71.4,93.0;71.4,95.6;71.4,98.2;71.4,100.8;71.4,103.4;71.4,106.0;71.4,108.6;71.4,111.2;71.4,113.8;71.4,116.4;71.4,119.0;71.4,121.6;71.4,124.2;71.4,126.8;71.4,129.4;71.4,137.2;71.4,139.8;71.4,142.4;71.4,145.0;71.4,147.6;71.4,150.2;74.0,-122.8;74.0,-120.2;74.0,-117.6;74.0,-94.2;74.0,-91.6;74.0,-55.2;74.0,-52.6;74.0,-50.0;74.0,-47.4;74.0,-44.8;74.0,-42.2;74.0,-39.6;74.0,-37.0;74.0,-34.4;74.0,-31.8;74.0,-29.2;74.0,-26.6;74.0,-24.0;74.0,-21.4;74.0,56.6;74.0,87.8;74.0,90.4;74.0,93.0;74.0,95.6;74.0,98.2;74.0,100.8;74.0,103.4;74.0,106.0;74.0,108.6;74.0,111.2;76.6,-120.2;76.6,-117.6;76.6,-104.6;76.6,-94.2;76.6,-91.6;76.6,-89.0;76.6,-86.4;76.6,-83.8;76.6,-81.2;76.6,-78.6;76.6,-65.6;76.6,-63.0;76.6,-60.4;76.6,-57.8;76.6,-55.2;76.6,-52.6;76.6,-50.0;76.6,-47.4;76.6,-44.8;76.6,-42.2;76.6,-39.6;76.6,-37.0;76.6,-34.4;76.6,-31.8;76.6,-29.2;76.6,-26.6;76.6,-24.0;76.6,-21.4;76.6,-18.8;76.6,67.0;76.6,103.4;76.6,106.0;76.6,108.6;76.6,111.2";
+  // the source data is a uniform ~2.6deg lat/lon grid. Shopify-style globes read as a dense,
+  // near-continuous stipple because their native grid is much finer than this — so every point
+  // gets new points added along its edges to its right/below/diagonal neighbors (whichever of
+  // those exist). Real coastline data is patchy — lots of cells are missing one corner or
+  // another — so filling per-edge independently (rather than requiring all 4 corners of a cell,
+  // which left visible checkerboard gaps) still gets solid, gap-free coverage everywhere land
+  // dots are adjacent at all.
+  var GRID_STEP = 2.6;
+  var SUBDIV = 3; // finer step = GRID_STEP / SUBDIV, i.e. ~0.87deg
+  function densifyDots(dots){
+    var key = function(latI, lonI){ return latI + ',' + lonI; };
+    var byKey = {};
+    dots.forEach(function(d){
+      byKey[key(Math.round(d.lat / GRID_STEP), Math.round(d.lon / GRID_STEP))] = d;
+    });
+
+    var seen = {};
+    var out = [];
+    function emit(lat, lon){
+      var k = Math.round(lat * 200) + ',' + Math.round(lon * 200);
+      if (seen[k]) return;
+      seen[k] = true;
+      out.push({ lat: lat, lon: lon });
+    }
+    dots.forEach(function(d){ emit(d.lat, d.lon); });
+
+    function fillEdge(from, to){
+      for (var s = 1; s < SUBDIV; s++){
+        emit(from.lat + (to.lat - from.lat) * (s / SUBDIV), from.lon + (to.lon - from.lon) * (s / SUBDIV));
+      }
+    }
+
+    dots.forEach(function(d){
+      var latI = Math.round(d.lat / GRID_STEP);
+      var lonI = Math.round(d.lon / GRID_STEP);
+      var right = byKey[key(latI, lonI + 1)];
+      var below = byKey[key(latI + 1, lonI)];
+      var diag  = byKey[key(latI + 1, lonI + 1)];
+      var antiDiag = byKey[key(latI + 1, lonI - 1)];
+
+      if (right) fillEdge(d, right);
+      if (below) fillEdge(d, below);
+      if (diag) fillEdge(d, diag);
+      if (antiDiag) fillEdge(d, antiDiag);
+    });
+    return out;
+  }
+
+  var DOTS = densifyDots(LAND_STR.split(';').map(function(pair){
+    var parts = pair.split(',');
+    return { lat: parseFloat(parts[0]), lon: parseFloat(parts[1]) };
+  }));
+
+  var DEG = Math.PI / 180;
+  var width = 0, height = 0, cx = 0, cy = 0, radius = 0;
+  var dpr = Math.max(1, window.devicePixelRatio || 1);
+  var CAM_DIST_FACTOR = 2.6; // camera distance as a multiple of radius, for a subtle perspective bulge
+
+  var rotY = 180;      // spin (degrees) — chosen so the Americas face front on load
+  var tilt = 18;        // tilt around x — draggable, and auto-eases toward whichever value best frames the active tour pin
+  var TILT_DEFAULT = 18; // starting value before the tour has picked a target for pin #0
+  // Wide on purpose: bringing a high-latitude pin like Canada to front-center needs a much
+  // steeper tilt than a southern one like Uruguay to stay inside the "horizon" crop — see
+  // idealTiltFor(). Shared with manual dragging too, so there's no jarring snap when a drag
+  // starts mid-tour on a pin that's currently using an extreme tilt. Taken almost to +/-90 so a
+  // manual drag can pan all the way up to the north pole and down to the south pole.
+  var TILT_MIN = -88, TILT_MAX = 88;
+  var dragging = false;
+  var lastX = 0, lastY = 0;
+  var inertiaV = 0;      // deg/frame carried after releasing a drag, decays back to the idle auto-spin
+  var tiltInertiaV = 0;  // same, for the vertical/tilt axis
+  var ROTATE_SENSITIVITY = 0.28; // deg per px of drag, both axes
+
+  // "Activity tour": instead of an idle auto-rotation that wanders anywhere, the globe cycles
+  // through PINS one at a time — like Shopify's live-visitors globe — rotating to bring each
+  // country to front-center, holding it there with a pin + info card, then moving to the next.
+  // This also means idle rotation only ever targets a real country, never empty ocean.
+  var TOUR_HOLD_MS = 2600;      // how long a country stays highlighted before moving on
+  var tourIndex = 0;
+  var tourState = 'transitioning'; // 'transitioning' (easing rotY toward the target) or 'holding'
+  var tourHoldStart = 0;
+  var cardAlpha = 0; // 0..1, fades the active pin + card in/out
+
+  // the gold route line only "travels" once per transition (from the country just held to the
+  // next one), instead of looping on its own clock — its progress is driven directly by how far
+  // the transition easing has actually gotten, so the comet always arrives exactly when the
+  // globe does. routeFrom/routeTo are set the moment a transition begins (see tick()).
+  var routeFrom = PINS[TOUR_ORDER[TOUR_ORDER.length - 1]];
+  var routeTo = PINS[TOUR_ORDER[0]];
+  var routeProgress = 0;
+  var routeInitialD = 1;
+
+  // hover: whichever pin the cursor is currently near (any of the PINS, not just the active
+  // tour stop), with its own eased alpha so the tooltip fades in/out instead of popping
+  var hoverPin = null;
+  var hoverAlpha = 0;
+
+  function normalizeRot(r){
+    var m = r % 360;
+    if (m < 0) m += 360;
+    return m;
+  }
+  // shortest signed distance (in degrees) from `from` to `to`, handling the 0/360 wrap
+  function angDiff(to, from){
+    var d = (to - from) % 360;
+    if (d > 180) d -= 360;
+    if (d < -180) d += 360;
+    return d;
+  }
+
+  // Only the top sliver of the sphere is meant to show (a shallow "horizon" peek, like the
+  // reference), so the circle's center sits below the visible canvas — these two fractions
+  // control how much of the circle pokes up above the crop and how wide it gets by the bottom edge.
+  var APEX_ABOVE_FRAC = 0.45; // how far above the canvas top the circle's apex sits, as a multiple of canvas height
+  var BOTTOM_SPAN_FRAC = 0.9; // how much of the half-width the circle should span by the bottom edge
+
+  function resize(){
+    var rect = wrap.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var k = height / width;
+    var kA = k * (1 + APEX_ABOVE_FRAC);
+    var half = BOTTOM_SPAN_FRAC / 2;
+    var r = (kA * kA + half * half) / (2 * kA);
+
+    radius = r * width;
+    cx = width / 2;
+    cy = radius - APEX_ABOVE_FRAC * height;
+  }
+
+  function project(lat, lon){
+    var phi = (90 - lat) * DEG;
+    var theta = (lon + rotY) * DEG;
+    // negated: without this, increasing longitude (going east) moved points to screen-LEFT,
+    // which put Europe to the left of Colombia/USA instead of to the right — this flips it so
+    // the map reads West (Americas) -> East (Europe) left-to-right, like a normal world map
+    var x0 = -radius * Math.sin(phi) * Math.cos(theta);
+    var y0 = radius * Math.cos(phi);
+    var z0 = radius * Math.sin(phi) * Math.sin(theta);
+
+    var t = tilt * DEG;
+    var y1 = y0 * Math.cos(t) - z0 * Math.sin(t);
+    var z1 = y0 * Math.sin(t) + z0 * Math.cos(t);
+    var x1 = x0;
+
+    // subtle perspective projection for a rounder, less "flat disc" look
+    var camDist = radius * CAM_DIST_FACTOR;
+    var persp = camDist / (camDist - z1);
+
+    return {
+      x: cx + x1 * persp,
+      y: cy - y1 * persp,
+      z: z1,
+      persp: persp
+    };
+  }
+
+  // Centering a pin's longitude (via rotY) also shifts its screen Y through the tilt term —
+  // a high-latitude country like Canada or France ends up much higher on screen once it's
+  // rotated to face front than a near-equatorial one like Colombia does, and can land above
+  // the visible crop entirely. So each pin also gets its own ideal `tilt`, found by sampling
+  // the allowed tilt range and keeping whichever value lands it closest to a comfortable,
+  // consistent height — this runs once per tour stop, not per frame, so a brute-force search is fine.
+  function idealTiltFor(lat, lon, forRotY){
+    var savedRotY = rotY, savedTilt = tilt;
+    rotY = forRotY;
+    var targetY = height * 0.46;
+    var best = TILT_DEFAULT, bestDiff = Infinity;
+    for (var t = TILT_MIN; t <= TILT_MAX; t += 1){
+      tilt = t;
+      var diff = Math.abs(project(lat, lon).y - targetY);
+      if (diff < bestDiff){ bestDiff = diff; best = t; }
+    }
+    rotY = savedRotY;
+    tilt = savedTilt;
+    return best;
+  }
+
+  var tourTargetRotY = 90;
+  var tourTargetTilt = TILT_DEFAULT;
+  function computeTourTargets(){
+    var pin = PINS[TOUR_ORDER[tourIndex]];
+    tourTargetRotY = normalizeRot(90 - pin.lon);
+    tourTargetTilt = idealTiltFor(pin.lat, pin.lon, tourTargetRotY);
+  }
+
+  function draw(now){
+    ctx.clearRect(0, 0, width, height);
+
+    // soft radial glow behind the globe, like a subtle vignette
+    var glow = ctx.createRadialGradient(cx, cy, radius * 0.2, cx, cy, radius * 1.35);
+    glow.addColorStop(0, 'rgba(20,20,30,0.04)');
+    glow.addColorStop(1, 'rgba(20,20,30,0)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.35, 0, Math.PI * 2);
+    ctx.fillStyle = glow;
+    ctx.fill();
+
+    // outer sphere guide (very subtle)
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // background dots (real coastlines), sorted back-to-front — small and light gray
+    var pts = DOTS.map(function(d){
+      var p = project(d.lat, d.lon);
+      return p;
+    });
+    pts.sort(function(a, b){ return a.z - b.z; });
+
+    for (var i = 0; i < pts.length; i++){
+      var p = pts[i];
+      var depth = (p.z + radius) / (2 * radius); // 0..1, 0.5 = the horizon
+      if (depth < 0.5) continue; // only the near hemisphere, so the coastline silhouette stays crisp
+      var edge = Math.min(1, (depth - 0.5) / 0.14); // fade in just past the horizon
+      var alpha = edge * (0.10 + (depth - 0.5) * 0.9);
+      var r = (0.32 + depth * 0.3) * p.persp;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(150,150,158,' + Math.min(0.55, alpha).toFixed(3) + ')';
+      ctx.fill();
+    }
+
+    // persistent "live location" markers — every client country pulses gently all the time,
+    // like the blue dot on a live map, so the globe reads as "active" even between tour stops
+    drawLivePins(now);
+
+    // gold route arc + traveling comet — only drawn while the globe is actually transitioning
+    // to the next country, so it travels once per hop instead of looping on its own clock
+    if (tourState === 'transitioning'){
+      drawTravelRoute(routeFrom, routeTo, routeProgress);
+    }
+
+    // active tour pin — a single highlighted country at a time (Shopify-style live-visitors
+    // marker), instead of showing all pins permanently. Fades in once the globe has rotated to
+    // face it, holds, then fades out just before the globe turns to the next one.
+    if (cardAlpha > 0.01){
+      drawActivePin(now);
+    }
+
+    // hover tooltip on top of everything else — works for any city, independent of the tour
+    if (!(hoverPin === PINS[TOUR_ORDER[tourIndex]] && cardAlpha > 0.5)){
+      drawHoverInfo();
+    }
+  }
+
+  function roundRect(x, y, w, h, r){
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  var ACCENT_RGB = '238,166,33'; // #eea621, matches the CTA buttons
+  var LIVE_PULSE_MS = 1900; // how long one pulse ring takes to expand and fade, per pin
+
+  // small gold "live location" dot + expanding pulse ring at every client country, all the time —
+  // offset per pin (via its index) so they don't all pulse in unison, which reads more organic
+  function drawLivePins(now){
+    for (var i = 0; i < PINS.length; i++){
+      var pin = PINS[i];
+      var p = project(pin.lat, pin.lon);
+      var depth = (p.z + radius) / (2 * radius);
+      if (depth < 0.5) continue; // far side of the globe, hidden
+      var edge = Math.min(1, (depth - 0.5) / 0.14);
+
+      var phase = ((now + i * (LIVE_PULSE_MS / PINS.length) * 1.7) % LIVE_PULSE_MS) / LIVE_PULSE_MS;
+      var ringR = (3 + phase * 11) * p.persp;
+      var ringAlpha = (1 - phase) * 0.45 * edge;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, ringR, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',' + ringAlpha.toFixed(3) + ')';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      var dotR = 2.6 * p.persp;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, dotR, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + ACCENT_RGB + ',' + (0.9 * edge).toFixed(3) + ')';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, dotR * 0.4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + (0.85 * edge).toFixed(3) + ')';
+      ctx.fill();
+    }
+  }
+
+  // spherical (great-circle) interpolation helpers, used to draw a route arc that follows the
+  // globe's curvature between two countries instead of a straight chord through the sphere
+  function toUnitVec(lat, lon){
+    var phi = (90 - lat) * DEG, theta = lon * DEG;
+    return [ Math.sin(phi) * Math.cos(theta), Math.cos(phi), Math.sin(phi) * Math.sin(theta) ];
+  }
+  function vecToLatLon(v){
+    var lat = 90 - Math.acos(Math.max(-1, Math.min(1, v[1]))) / DEG;
+    var lon = Math.atan2(v[2], v[0]) / DEG;
+    return { lat: lat, lon: lon };
+  }
+  function slerp(a, b, t){
+    var dot = Math.max(-1, Math.min(1, a[0]*b[0] + a[1]*b[1] + a[2]*b[2]));
+    var theta = Math.acos(dot) * t;
+    if (theta < 1e-6) return a;
+    var rx = b[0] - a[0]*dot, ry = b[1] - a[1]*dot, rz = b[2] - a[2]*dot;
+    var len = Math.sqrt(rx*rx + ry*ry + rz*rz) || 1;
+    rx /= len; ry /= len; rz /= len;
+    var ct = Math.cos(theta), st = Math.sin(theta);
+    return [ a[0]*ct + rx*st, a[1]*ct + ry*st, a[2]*ct + rz*st ];
+  }
+
+  var ROUTE_SEGMENTS = 48;
+
+  // dashed gold great-circle line from the country just held to the next one, with a small
+  // glowing "comet" whose position is driven by `progress` (0..1) — the caller ties that
+  // directly to the globe's own transition easing, so the comet travels exactly once per hop
+  // and arrives exactly when the globe does, instead of looping on an independent clock
+  function drawTravelRoute(a, b, progress){
+    var va = toUnitVec(a.lat, a.lon), vb = toUnitVec(b.lat, b.lon);
+
+    var pts = [];
+    for (var i = 0; i <= ROUTE_SEGMENTS; i++){
+      var t = i / ROUTE_SEGMENTS;
+      var ll = vecToLatLon(slerp(va, vb, t));
+      var p = project(ll.lat, ll.lon);
+      pts.push({ p: p, depth: (p.z + radius) / (2 * radius) });
+    }
+
+    ctx.save();
+    ctx.lineWidth = 1.3;
+    ctx.setLineDash([1, 5]);
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    var started = false;
+    for (var j = 0; j < pts.length; j++){
+      var pt = pts[j];
+      if (pt.depth < 0.5){ started = false; continue; }
+      if (!started){ ctx.moveTo(pt.p.x, pt.p.y); started = true; }
+      else ctx.lineTo(pt.p.x, pt.p.y);
+    }
+    ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',0.4)';
+    ctx.stroke();
+    ctx.restore();
+
+    var idx = Math.min(pts.length - 1, Math.floor(progress * pts.length));
+    var head = pts[idx];
+    if (head.depth < 0.5) return;
+
+    for (var k = 7; k >= 1; k--){
+      var ti = idx - k;
+      if (ti < 0) continue;
+      var tp = pts[ti];
+      if (tp.depth < 0.5) continue;
+      var fade = 1 - k / 7;
+      ctx.beginPath();
+      ctx.arc(tp.p.x, tp.p.y, (2.2 - k * 0.15) * tp.p.persp, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + ACCENT_RGB + ',' + (fade * 0.55).toFixed(3) + ')';
+      ctx.fill();
+    }
+
+    ctx.save();
+    ctx.shadowColor = 'rgba(' + ACCENT_RGB + ',0.9)';
+    ctx.shadowBlur = 8;
+    ctx.beginPath();
+    ctx.arc(head.p.x, head.p.y, 3 * head.p.persp, 0, Math.PI * 2);
+    ctx.fillStyle = '#eea621';
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawActivePin(now){
+    var pin = PINS[TOUR_ORDER[tourIndex]];
+    var pp = project(pin.lat, pin.lon);
+    var a = cardAlpha;
+
+    // teardrop marker: a circular head with a small pointed tail, like a map pin
+    var headR = 6.5 * pp.persp;
+    var headCy = pp.y - headR;
+
+    // "live location" pulse — an expanding, fading ring under the pin's head, looping
+    // continuously while the card is showing (this breathing loop is separate from the
+    // once-per-hop travel line: a live-location dot keeps pulsing the whole time it's active)
+    var pulsePhase = (now % LIVE_PULSE_MS) / LIVE_PULSE_MS;
+    ctx.beginPath();
+    ctx.arc(pp.x, headCy, headR * (0.9 + pulsePhase * 2.4), 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(' + PIN_RGB + ',' + ((1 - pulsePhase) * 0.5 * a).toFixed(3) + ')';
+    ctx.lineWidth = 1.4;
+    ctx.stroke();
+
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.25)';
+    ctx.shadowBlur = 6;
+    ctx.shadowOffsetY = 2;
+    ctx.fillStyle = 'rgba(' + PIN_RGB + ',' + a.toFixed(3) + ')';
+    ctx.beginPath();
+    ctx.arc(pp.x, headCy, headR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(pp.x - headR * 0.75, headCy + headR * 0.6);
+    ctx.lineTo(pp.x + headR * 0.75, headCy + headR * 0.6);
+    ctx.lineTo(pp.x, pp.y);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+    // small white "hole" for the classic map-pin look
+    ctx.beginPath();
+    ctx.arc(pp.x, headCy, headR * 0.4, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,' + (a * 0.9).toFixed(3) + ')';
+    ctx.fill();
+
+    // floating card with the city name + its sales figure (pin.note), positioned above-left of
+    // the pin and clamped so it never spills past the canvas edges
+    drawInfoCard(pp, headCy - headR, pin, a);
+  }
+
+  // shared card renderer — a rounded white card with the pin's title (flag + city, country) and
+  // its note (sales figure) on a second line, anchored above-left of `topY` (the top of whatever
+  // marker is calling it) and clamped inside the canvas. Used by both the active tour pin and
+  // the hover tooltip so the two look identical.
+  function drawInfoCard(pp, topY, pin, alpha){
+    var title = pin.flag + '  ' + pin.name;
+    var note = pin.note || '';
+    ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    var titleW = ctx.measureText(title).width;
+    ctx.font = '400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    var subW = ctx.measureText(note).width;
+    var cardW = Math.max(titleW, subW) + 28;
+    var cardH = 46;
+
+    var cardX = pp.x - 12 - cardW;
+    var cardY = topY - 12 - cardH;
+    // pins near the horizon (top of the crop) don't leave room for the card above them —
+    // in that case put the card below the pin instead of letting the top-clamp push it down
+    // on top of the marker and hide it
+    if (cardY < 8) cardY = pp.y + 14;
+    cardX = Math.min(Math.max(cardX, 8), width - cardW - 8);
+    cardY = Math.min(Math.max(cardY, 8), height - cardH - 8);
+
+    ctx.save();
+    ctx.shadowColor = 'rgba(20,20,30,0.14)';
+    ctx.shadowBlur = 14;
+    ctx.shadowOffsetY = 4;
+    roundRect(cardX, cardY, cardW, cardH, 10);
+    ctx.fillStyle = 'rgba(255,255,255,' + (alpha * 0.97).toFixed(3) + ')';
+    ctx.fill();
+    ctx.restore();
+    roundRect(cardX, cardY, cardW, cardH, 10);
+    ctx.strokeStyle = 'rgba(0,0,0,' + (alpha * 0.06).toFixed(3) + ')';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    ctx.fillStyle = 'rgba(23,23,26,' + alpha.toFixed(3) + ')';
+    ctx.fillText(title, cardX + 14, cardY + 20);
+    ctx.font = '400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    ctx.fillStyle = 'rgba(110,110,118,' + (alpha * 0.95).toFixed(3) + ')';
+    ctx.fillText(note, cardX + 14, cardY + 36);
+  }
+
+  // hover tooltip — same card as the active tour pin, but triggered by mouse proximity to any of
+  // the (many) city pins instead of by the auto-tour, so every city is inspectable on hover
+  function drawHoverInfo(){
+    if (!hoverPin || hoverAlpha < 0.01) return;
+    var pp = project(hoverPin.lat, hoverPin.lon);
+    var depth = (pp.z + radius) / (2 * radius);
+    if (depth < 0.5) return; // rotated to the far side while the tooltip was easing out
+
+    var dotR = 3.4 * pp.persp;
+    ctx.beginPath();
+    ctx.arc(pp.x, pp.y, dotR + 2.5, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(' + PIN_RGB + ',' + (0.85 * hoverAlpha).toFixed(3) + ')';
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+
+    drawInfoCard(pp, pp.y - dotR - 8, hoverPin, hoverAlpha);
+  }
+
+  function tick(now){
+    hoverAlpha += ((hoverPin ? 1 : 0) - hoverAlpha) * 0.2;
+
+    if (dragging){
+      // rotation and tilt are both driven directly from pointerMove while dragging — free to go anywhere
+      cardAlpha = Math.max(0, cardAlpha - 0.15); // hide the card while the user is steering manually
+    } else if (Math.abs(inertiaV) > 0.01 || Math.abs(tiltInertiaV) > 0.01){
+      // still coasting from a released drag, on either axis
+      if (Math.abs(inertiaV) > 0.01){ rotY += inertiaV; inertiaV *= 0.92; }
+      if (Math.abs(tiltInertiaV) > 0.01){
+        tilt = Math.max(TILT_MIN, Math.min(TILT_MAX, tilt + tiltInertiaV));
+        tiltInertiaV *= 0.92;
+      }
+      cardAlpha = Math.max(0, cardAlpha - 0.15);
+    } else {
+      // fully idle: run the "activity tour" — rotate (and re-tilt, see idealTiltFor) to face the
+      // current pin, hold it with a card, then move to the next one. Every target is a real
+      // country at a framing chosen to keep it on-screen, so this never drifts into empty ocean
+      // or off the top edge the way a free-roaming idle auto-spin could.
+      if (tourState === 'transitioning'){
+        var d = angDiff(tourTargetRotY, normalizeRot(rotY));
+        rotY += d * 0.08;
+        tilt += (tourTargetTilt - tilt) * 0.08;
+        cardAlpha = Math.max(0, cardAlpha - 0.15);
+        // the route comet's progress is just how much of the initial rotation gap has closed —
+        // same exponential-ease shape as the rotation itself, so it always lands exactly on arrival
+        routeProgress = Math.min(1, 1 - Math.abs(d) / routeInitialD);
+        if (Math.abs(d) < 1.2 && Math.abs(tilt - tourTargetTilt) < 0.3){
+          tourState = 'holding';
+          tourHoldStart = now;
+        }
+      } else { // holding
+        cardAlpha = Math.min(1, cardAlpha + 0.12);
+        if (now - tourHoldStart > TOUR_HOLD_MS){
+          var fromIndex = tourIndex;
+          tourState = 'transitioning';
+          tourIndex = (tourIndex + 1) % TOUR_ORDER.length;
+          computeTourTargets();
+          routeFrom = PINS[TOUR_ORDER[fromIndex]];
+          routeTo = PINS[TOUR_ORDER[tourIndex]];
+          routeProgress = 0;
+          routeInitialD = Math.max(1, Math.abs(angDiff(tourTargetRotY, normalizeRot(rotY))));
+        }
+      }
+    }
+
+    draw(now);
+    requestAnimationFrame(tick);
+  }
+
+  // Free drag on both axes — horizontal spins the globe, vertical adjusts the tilt (clamped so the
+  // shallow "horizon" crop never flips into something broken-looking) — with inertia on release.
+  function pointerDown(e){
+    dragging = true;
+    inertiaV = 0;
+    tiltInertiaV = 0;
+    wrap.classList.add('dragging');
+    var pt = e.touches ? e.touches[0] : e;
+    lastX = pt.clientX;
+    lastY = pt.clientY;
+    // prevent the browser's native drag/text-selection gesture from hijacking the mouse
+    // (that native "ghost drag" was what made this feel jerky instead of a clean pan)
+    if (e.type === 'mousedown') e.preventDefault();
+  }
+  function pointerMove(e){
+    if (!dragging) return;
+    var pt = e.touches ? e.touches[0] : e;
+    var dx = pt.clientX - lastX;
+    var dy = pt.clientY - lastY;
+    lastX = pt.clientX;
+    lastY = pt.clientY;
+    // at front-center (theta=90°), increasing rotY now moves the near surface toward +x (since
+    // project() mirrors x0 so Europe reads to the right of the Americas) — this keeps the point
+    // under the cursor moving the same direction as the cursor, like a real trackball
+    var dRot = dx * ROTATE_SENSITIVITY;
+    rotY += dRot;
+    inertiaV = dRot;
+    var dTilt = dy * ROTATE_SENSITIVITY; // drag down brings the near side down toward you
+    tilt = Math.max(TILT_MIN, Math.min(TILT_MAX, tilt + dTilt));
+    tiltInertiaV = dTilt;
+    if (e.cancelable) e.preventDefault();
+  }
+  function pointerUp(){
+    dragging = false;
+    wrap.classList.remove('dragging');
+  }
+
+  var HOVER_HIT_PX = 14; // how close the cursor needs to be to a pin to trigger its tooltip
+  // finds whichever PINS entry is nearest the cursor (within HOVER_HIT_PX, on the near
+  // hemisphere) so any city — not just the one the auto-tour currently has active — can show
+  // its info card just by hovering over it
+  function hoverMove(e){
+    if (dragging){ hoverPin = null; return; }
+    var rect = canvas.getBoundingClientRect();
+    var mx = e.clientX - rect.left;
+    var my = e.clientY - rect.top;
+    var best = null, bestDist = HOVER_HIT_PX;
+    for (var i = 0; i < PINS.length; i++){
+      var pin = PINS[i];
+      var p = project(pin.lat, pin.lon);
+      var depth = (p.z + radius) / (2 * radius);
+      if (depth < 0.5) continue; // far side of the globe
+      var dx = p.x - mx, dy = p.y - my;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < bestDist){ bestDist = dist; best = pin; }
+    }
+    hoverPin = best;
+  }
+  function hoverLeave(){
+    hoverPin = null;
+  }
+
+  wrap.addEventListener('mousedown', pointerDown);
+  window.addEventListener('mousemove', pointerMove);
+  window.addEventListener('mouseup', pointerUp);
+  wrap.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  wrap.addEventListener('mousemove', hoverMove);
+  wrap.addEventListener('mouseleave', hoverLeave);
+
+  wrap.addEventListener('touchstart', pointerDown, { passive: true });
+  window.addEventListener('touchmove', pointerMove, { passive: false });
+  window.addEventListener('touchend', pointerUp);
+
+  window.addEventListener('resize', resize);
+
+  resize();
+  computeTourTargets();
+  routeInitialD = Math.max(1, Math.abs(angDiff(tourTargetRotY, normalizeRot(rotY))));
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
