@@ -485,6 +485,10 @@
 
   function detectLang(){
     try {
+      var h = (location.hash || '').replace('#','').toLowerCase();
+      if (h === 'en' || h === 'es') return h;
+    } catch(e){}
+    try {
       var saved = localStorage.getItem('site_lang');
       if (saved === 'en' || saved === 'es') return saved;
     } catch(e){}
@@ -521,6 +525,7 @@
 
     window.SITE_LANG = lang;
     try { localStorage.setItem('site_lang', lang); } catch(e){}
+    try { history.replaceState(null, '', '#' + lang); } catch(e){}
   }
 
   window.SITE_LANG = detectLang();
