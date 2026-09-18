@@ -709,7 +709,7 @@
   var DEG = Math.PI / 180;
   var width = 0, height = 0, cx = 0, cy = 0, radius = 0;
   var dpr = Math.max(1, window.devicePixelRatio || 1);
-  var CAM_DIST_FACTOR = 2.6; // camera distance as a multiple of radius, for a subtle perspective bulge
+  var CAM_DIST_FACTOR = 20; // was 2.6 — that made the closest dots bulge ~8% past the sphere silhouette, invisible under the old crop, visible now that the full dome shows // camera distance as a multiple of radius, for a subtle perspective bulge
 
   var rotY = 180;      // spin (degrees) — chosen so the Americas face front on load
   var tilt = 18;        // tilt around x — draggable, and auto-eases toward whichever value best frames the active tour pin
