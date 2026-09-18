@@ -350,7 +350,7 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn primary" href="assets/cv/sebastian-ortegon-cv.pdf" target="_blank" rel="noopener" data-i18n="cv">Download CV</a>
+        <a class="btn primary" href="assets/cv/cvsebastian_en.pdf" target="_blank" rel="noopener" data-i18n="cv">Download CV</a>
         <a class="btn" href="mailto:sebastian.ortegon@gmail.com" data-i18n="contact">Contact me</a>
         <a class="btn" href="https://linkedin.com/in/sebastianortegon" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -460,7 +460,8 @@
       trust: "You may not know me yet, but you'll probably recognize some of the brands I've helped grow:",
       partner_desktop: "Official partner:",
       partner_mobile: "Oh, I'm also an official partner of:",
-      sales_suffix: "USD in sales"
+      sales_suffix: "USD in sales",
+      cv_file: "assets/cv/cvsebastian_en.pdf"
     },
     es: {
       meta_title: "Sebastian Ortegon — Consultor de Crecimiento",
@@ -479,7 +480,8 @@
       trust: "Puede que aún no me conozcas, pero seguro reconoces algunas de las marcas que he ayudado a crecer:",
       partner_desktop: "Partner oficial:",
       partner_mobile: "Ah, y también soy partner oficial de:",
-      sales_suffix: "USD en ventas"
+      sales_suffix: "USD en ventas",
+      cv_file: "assets/cv/cvsebastian_es.pdf"
     }
   };
 
@@ -516,6 +518,9 @@
       var key = nodes[i].getAttribute('data-i18n');
       if (dict[key] != null) nodes[i].innerHTML = dict[key];
     }
+
+    var cvLink = document.querySelector('a[data-i18n="cv"]');
+    if (cvLink && dict.cv_file) cvLink.setAttribute('href', dict.cv_file);
 
     var btns = document.querySelectorAll('.lang-toggle button');
     for (var j = 0; j < btns.length; j++){
