@@ -761,8 +761,8 @@
   // Only the top sliver of the sphere is meant to show (a shallow "horizon" peek, like the
   // reference), so the circle's center sits below the visible canvas — these two fractions
   // control how much of the circle pokes up above the crop and how wide it gets by the bottom edge.
-  var APEX_ABOVE_FRAC = 0.45; // how far above the canvas top the circle's apex sits, as a multiple of canvas height
-  var BOTTOM_SPAN_FRAC = 0.9; // how much of the half-width the circle should span by the bottom edge
+  var APEX_ABOVE_FRAC = 0; // how far above the canvas top the circle's apex sits, as a multiple of canvas height
+  var BOTTOM_SPAN_FRAC = 0.77; // how much of the half-width the circle should span by the bottom edge
 
   function resize(){
     var rect = wrap.getBoundingClientRect();
