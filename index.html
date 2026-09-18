@@ -823,7 +823,7 @@
   function idealTiltFor(lat, lon, forRotY){
     var savedRotY = rotY, savedTilt = tilt;
     rotY = forRotY;
-    var targetY = height * 0.46;
+    var targetY = cy - radius * 0.24; // 24% of the current radius above center — geometry-invariant, matches the pre-dome-fix framing
     var best = TILT_DEFAULT, bestDiff = Infinity;
     for (var t = TILT_MIN; t <= TILT_MAX; t += 1){
       tilt = t;
