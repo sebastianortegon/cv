@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sebastian Ortegon — Growth Consultant</title>
 <meta name="description" content="Growth Consultant with 10+ years driving ecommerce, marketplace and performance-marketing growth for 200+ brands across LATAM, the USA and Europe." />
+<link rel="canonical" href="https://sebastianortegon.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sebastianortegon.com/" />
+<meta property="og:site_name" content="Sebastian Ortegon" />
+<meta property="og:title" content="Sebastian Ortegon — Growth Consultant" />
+<meta property="og:description" content="Growth Consultant with 10+ years driving ecommerce, marketplace and performance-marketing growth for 200+ brands across LATAM, the USA and Europe." />
+<meta property="og:image" content="https://sebastianortegon.com/assets/og/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sebastian Ortegon — Growth Consultant" />
+<meta name="twitter:description" content="Growth Consultant with 10+ years driving ecommerce, marketplace and performance-marketing growth for 200+ brands across LATAM, the USA and Europe." />
+<meta name="twitter:image" content="https://sebastianortegon.com/assets/og/og-image.jpg" />
 <style>
   :root{
     --sidebar-w: 400px;
@@ -130,6 +143,36 @@
   }
   .btn.primary:hover{ background:var(--accent-dark); border-color:var(--accent-dark); }
 
+  /* ================= LANGUAGE TOGGLE ================= */
+  .lang-toggle{
+    position:fixed;
+    top:16px; right:16px;
+    z-index:50;
+    display:flex;
+    gap:2px;
+    background:rgba(255,255,255,.92);
+    border:1.5px solid var(--text);
+    border-radius:999px;
+    padding:3px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  .lang-toggle button{
+    border:none;
+    background:transparent;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.03em;
+    padding:6px 12px;
+    border-radius:999px;
+    cursor:pointer;
+    color:var(--muted);
+    line-height:1;
+  }
+  .lang-toggle button.active{
+    background:var(--text);
+    color:#fff;
+  }
+
   /* ================= PARTNERS (official partner strip) ================= */
   .partners-footer{
     background:var(--bg-side);
@@ -145,12 +188,13 @@
   }
   .label-mobile{ display:none; }
   .partners-grid{
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
     align-items:center;
-    gap:20px 26px;
+    justify-items:center;
+    gap:20px 16px;
   }
-  .partners-grid img{ height:26px; width:auto; max-width:110px; object-fit:contain; }
+  .partners-grid img{ height:26px; width:auto; max-width:100%; object-fit:contain; }
 
   /* ================= MAIN CONTENT ================= */
   .content{
@@ -254,6 +298,7 @@
 
   /* ================= MOBILE LAYOUT ================= */
   @media (max-width:899px){
+    .lang-toggle{ top:12px; right:12px; }
     .sidebar{ padding:36px 24px 28px; }
     .content{ padding:40px 24px 0px; }
     .partners-footer{
@@ -274,6 +319,11 @@
 </head>
 <body>
 
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language / Idioma">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="es">ES</button>
+  </div>
+
   <div class="page">
 
     <!-- ================= LEFT SIDEBAR ================= -->
@@ -284,24 +334,24 @@
       <div class="meta-row">
         <span class="meta-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          Growth Consultant
+          <span data-i18n="role">Growth Consultant</span>
         </span>
         <span class="meta-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M7 15h4"/></svg>
-          $250k/year in ads
+          <span data-i18n="adspend">$250k/year in ads</span>
         </span>
       </div>
 
-      <p class="stat-line">3–5x ROAS for +200 brands in 10 years</p>
+      <p class="stat-line" data-i18n="stat">3–5x ROAS for +200 brands in 10 years</p>
 
       <div class="side-bio">
-        <p>I help companies scale ecommerce, marketplaces and performance marketing.</p>
-        <p>Looking for increasing your online sales?<br/>I can definitely help you! 👇</p>
+        <p data-i18n="bio1">I help companies scale ecommerce, marketplaces and performance marketing.</p>
+        <p data-i18n="bio2">Looking for increasing your online sales?<br/>I can definitely help you! 👇</p>
       </div>
 
       <div class="cta-row">
-        <a class="btn primary" href="assets/cv/sebastian-ortegon-cv.pdf" target="_blank" rel="noopener">Download CV</a>
-        <a class="btn" href="mailto:sebastian.ortegon@gmail.com">Contact me</a>
+        <a class="btn primary" href="assets/cv/sebastian-ortegon-cv.pdf" target="_blank" rel="noopener" data-i18n="cv">Download CV</a>
+        <a class="btn" href="mailto:sebastian.ortegon@gmail.com" data-i18n="contact">Contact me</a>
         <a class="btn" href="https://linkedin.com/in/sebastianortegon" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </aside>
@@ -309,11 +359,11 @@
     <!-- ================= RIGHT CONTENT ================= -->
     <main class="content">
       <section class="about">
-        <h2 class="section-title">About me</h2>
-        <p>For the past 10+ years I've combined design thinking with commercial strategy, driving measurable business results across ecommerce, marketplaces, and multichannel strategies. I lead strategic engagements for 200+ brands across LATAM, the USA, and Europe — helping the practice grow 77% YoY (2023) and 52% YoY (2024), while consistently delivering 3x–5x ROAS for retail, beauty, health, and B2B clients.</p>
-        <p>I specialize in designing and executing end-to-end digital strategies that integrate SEO, SEM, performance marketing, analytics, and UX optimization to increase online revenue and profitability. My approach combines strategic vision with hands-on execution — overseeing six-figure ad budgets, managing cross-functional teams, and translating data into commercial decisions that drive measurable growth.</p>
-        <p>With a proven track record of launching ecommerce operations across Shopify, MercadoLibre, Amazon, and other platforms in 15+ countries, and achieving up to $9 ROI per dollar spent, I bring the operational depth and strategic leadership to scale growth in complex, multinational environments.</p>
-        <p class="trust">You may not know me yet, but you'll probably recognize some of the brands I've helped grow:</p>
+        <h2 class="section-title" data-i18n="about_title">About me</h2>
+        <p data-i18n="about1">For the past 10+ years I've combined design thinking with commercial strategy, driving measurable business results across ecommerce, marketplaces, and multichannel strategies. I lead strategic engagements for 200+ brands across LATAM, the USA, and Europe — helping the practice grow 77% YoY (2023) and 52% YoY (2024), while consistently delivering 3x–5x ROAS for retail, beauty, health, and B2B clients.</p>
+        <p data-i18n="about2">I specialize in designing and executing end-to-end digital strategies that integrate SEO, SEM, performance marketing, analytics, and UX optimization to increase online revenue and profitability. My approach combines strategic vision with hands-on execution — overseeing six-figure ad budgets, managing cross-functional teams, and translating data into commercial decisions that drive measurable growth.</p>
+        <p data-i18n="about3">With a proven track record of launching ecommerce operations across Shopify, MercadoLibre, Amazon, and other platforms in 15+ countries, and achieving up to $9 ROI per dollar spent, I bring the operational depth and strategic leadership to scale growth in complex, multinational environments.</p>
+        <p class="trust" data-i18n="trust">You may not know me yet, but you'll probably recognize some of the brands I've helped grow:</p>
       </section>
 
       <section class="marquee-block" aria-label="Client brands">
@@ -373,20 +423,121 @@
     <!-- ================= PARTNERS STRIP ================= -->
     <section class="partners-footer">
       <div class="partners-label">
-        <span class="label-desktop">Official partner:</span>
-        <span class="label-mobile">Oh, I'm also an official partner of:</span>
+        <span class="label-desktop" data-i18n="partner_desktop">Official partner:</span>
+        <span class="label-mobile" data-i18n="partner_mobile">Oh, I'm also an official partner of:</span>
       </div>
       <div class="partners-grid">
         <img class="logo-img" src="assets/partners/meta.png" alt="Meta Business Partner" />
         <img class="logo-img" src="assets/partners/google-partner.png" alt="Google Partner" />
         <img class="logo-img" src="assets/partners/tiktok.png" alt="TikTok Marketing Partner" />
-        <img class="logo-img" src="assets/partners/shopify.png" alt="Shopify" />
+        <img class="logo-img" src="assets/partners/Shopify.png" alt="Shopify" />
         <img class="logo-img" src="assets/partners/wix.png" alt="Wix Partners" />
         <img class="logo-img" src="assets/partners/vtex.png" alt="VTEX" />
       </div>
     </section>
 
   </div>
+
+<script>
+(function(){
+  "use strict";
+
+  var I18N = {
+    en: {
+      meta_title: "Sebastian Ortegon — Growth Consultant",
+      meta_desc: "Growth Consultant with 10+ years driving ecommerce, marketplace and performance-marketing growth for 200+ brands across LATAM, the USA and Europe.",
+      role: "Growth Consultant",
+      adspend: "$250k/year in ads",
+      stat: "3–5x ROAS for +200 brands in 10 years",
+      bio1: "I help companies scale ecommerce, marketplaces and performance marketing.",
+      bio2: "Looking for increasing your online sales?<br/>I can definitely help you! 👇",
+      cv: "Download CV",
+      contact: "Contact me",
+      about_title: "About me",
+      about1: "For the past 10+ years I've combined design thinking with commercial strategy, driving measurable business results across ecommerce, marketplaces, and multichannel strategies. I lead strategic engagements for 200+ brands across LATAM, the USA, and Europe — helping the practice grow 77% YoY (2023) and 52% YoY (2024), while consistently delivering 3x–5x ROAS for retail, beauty, health, and B2B clients.",
+      about2: "I specialize in designing and executing end-to-end digital strategies that integrate SEO, SEM, performance marketing, analytics, and UX optimization to increase online revenue and profitability. My approach combines strategic vision with hands-on execution — overseeing six-figure ad budgets, managing cross-functional teams, and translating data into commercial decisions that drive measurable growth.",
+      about3: "With a proven track record of launching ecommerce operations across Shopify, MercadoLibre, Amazon, and other platforms in 15+ countries, and achieving up to $9 ROI per dollar spent, I bring the operational depth and strategic leadership to scale growth in complex, multinational environments.",
+      trust: "You may not know me yet, but you'll probably recognize some of the brands I've helped grow:",
+      partner_desktop: "Official partner:",
+      partner_mobile: "Oh, I'm also an official partner of:",
+      sales_suffix: "USD in sales"
+    },
+    es: {
+      meta_title: "Sebastian Ortegon — Consultor de Crecimiento",
+      meta_desc: "Consultor de Crecimiento con más de 10 años impulsando el crecimiento de ecommerce, marketplaces y performance marketing para más de 200 marcas en LATAM, EE. UU. y Europa.",
+      role: "Consultor de Crecimiento",
+      adspend: "$250k/año en pauta publicitaria",
+      stat: "3–5x ROAS para +200 marcas en 10 años",
+      bio1: "Ayudo a empresas a escalar ecommerce, marketplaces y performance marketing.",
+      bio2: "¿Buscas aumentar tus ventas online?<br/>¡Puedo ayudarte! 👇",
+      cv: "Descargar CV",
+      contact: "Escríbeme",
+      about_title: "Sobre mí",
+      about1: "Durante los últimos 10+ años he combinado design thinking con estrategia comercial, generando resultados medibles de negocio en ecommerce, marketplaces y estrategias multicanal. Lidero iniciativas estratégicas para +200 marcas en LATAM, EE. UU. y Europa — ayudando a la práctica a crecer 77% YoY (2023) y 52% YoY (2024), entregando de forma consistente 3x–5x ROAS para clientes de retail, belleza, salud y B2B.",
+      about2: "Me especializo en diseñar y ejecutar estrategias digitales de punta a punta que integran SEO, SEM, performance marketing, analytics y optimización UX para aumentar el ingreso y la rentabilidad online. Mi enfoque combina visión estratégica con ejecución práctica — gestionando presupuestos publicitarios de seis cifras, liderando equipos multidisciplinarios y traduciendo datos en decisiones comerciales que generan crecimiento medible.",
+      about3: "Con un historial comprobado lanzando operaciones de ecommerce en Shopify, MercadoLibre, Amazon y otras plataformas en +15 países, y logrando hasta $9 de ROI por cada dólar invertido, aporto la profundidad operativa y el liderazgo estratégico para escalar el crecimiento en entornos multinacionales complejos.",
+      trust: "Puede que aún no me conozcas, pero seguro reconoces algunas de las marcas que he ayudado a crecer:",
+      partner_desktop: "Partner oficial:",
+      partner_mobile: "Ah, y también soy partner oficial de:",
+      sales_suffix: "USD en ventas"
+    }
+  };
+
+  function detectLang(){
+    try {
+      var saved = localStorage.getItem('site_lang');
+      if (saved === 'en' || saved === 'es') return saved;
+    } catch(e){}
+    var nav = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
+    return nav.indexOf('es') === 0 ? 'es' : 'en';
+  }
+
+  function setMeta(selector, value){
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  }
+
+  function applyLang(lang){
+    var dict = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang;
+    document.title = dict.meta_title;
+    setMeta('meta[name="description"]', dict.meta_desc);
+    setMeta('meta[property="og:title"]', dict.meta_title);
+    setMeta('meta[property="og:description"]', dict.meta_desc);
+    setMeta('meta[name="twitter:title"]', dict.meta_title);
+    setMeta('meta[name="twitter:description"]', dict.meta_desc);
+
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < nodes.length; i++){
+      var key = nodes[i].getAttribute('data-i18n');
+      if (dict[key] != null) nodes[i].innerHTML = dict[key];
+    }
+
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var j = 0; j < btns.length; j++){
+      var isActive = btns[j].getAttribute('data-lang') === lang;
+      btns[j].classList.toggle('active', isActive);
+    }
+
+    window.SITE_LANG = lang;
+    try { localStorage.setItem('site_lang', lang); } catch(e){}
+  }
+
+  window.SITE_LANG = detectLang();
+
+  document.addEventListener('DOMContentLoaded', function(){
+    applyLang(window.SITE_LANG);
+    var toggle = document.getElementById('langToggle');
+    if (toggle){
+      toggle.addEventListener('click', function(e){
+        var btn = e.target.closest('button[data-lang]');
+        if (!btn) return;
+        applyLang(btn.getAttribute('data-lang'));
+      });
+    }
+  });
+})();
+</script>
 
 <script>
 (function(){
@@ -413,9 +564,15 @@
 
   // a random sales figure per city, generated once at load and kept stable for the session —
   // formatted abbreviated (250k / 1.5M) rather than spelled out, e.g. "+$250k USD in sales"
-  function randSales(){
+  function randAmount(){
     var v = 350000 + Math.random() * (2000000 - 350000);
-    var k = Math.round(v / 10000) * 10; // nearest 10k, e.g. 250, 1500
+    return Math.round(v / 10000) * 10000; // nearest 10k
+  }
+  // formats a raw amount into the card's sales line, in whichever language is active right now
+  // (window.SITE_LANG, set by the i18n script above) — called at draw time, not at load time,
+  // so switching the language toggle updates every pin's note on the very next frame
+  function formatSales(amountRaw){
+    var k = Math.round(amountRaw / 10000) * 10; // e.g. 250, 1500
     var amount;
     if (k >= 1000){
       var m = k / 1000;
@@ -423,41 +580,43 @@
     } else {
       amount = k + 'k';
     }
-    return '+$' + amount + ' USD in sales';
+    var lang = window.SITE_LANG === 'es' ? 'es' : 'en';
+    var suffix = lang === 'es' ? 'USD en ventas' : 'USD in sales';
+    return '+$' + amount + ' ' + suffix;
   }
 
   // `note` is the card's second line, per city — edit any of these freely (name, coordinates,
   // or note). Coordinates are approximate city centers.
   var PINS = [
-    { name:'Cali, CO',        lat:3.45,   lon:-76.53,  flag:'🇨🇴', note:randSales() },
-    { name:'Medellín, CO',    lat:6.25,   lon:-75.56,  flag:'🇨🇴', note:randSales() },
-    { name:'Bogotá, CO',      lat:4.71,   lon:-74.07,  flag:'🇨🇴', note:randSales() },
-    { name:'Cartagena, CO',   lat:10.39,  lon:-75.51,  flag:'🇨🇴', note:randSales() },
-    { name:'Popayán, CO',     lat:2.44,   lon:-76.61,  flag:'🇨🇴', note:randSales() },
-    { name:'Barranquilla, CO',lat:10.96,  lon:-74.80,  flag:'🇨🇴', note:randSales() },
-    { name:'Miami, US',       lat:25.76,  lon:-80.19,  flag:'🇺🇸', note:randSales() },
-    { name:'New York, US',    lat:40.71,  lon:-74.01,  flag:'🇺🇸', note:randSales() },
-    { name:'Tampa, US',       lat:27.95,  lon:-82.46,  flag:'🇺🇸', note:randSales() },
-    { name:'Washington, US',  lat:38.90,  lon:-77.04,  flag:'🇺🇸', note:randSales() },
-    { name:'Delaware, US',    lat:39.75,  lon:-75.55,  flag:'🇺🇸', note:randSales() },
-    { name:'Paris, FR',       lat:48.86,  lon:2.35,    flag:'🇫🇷', note:randSales() },
-    { name:'Madrid, ES',      lat:40.42,  lon:-3.70,   flag:'🇪🇸', note:randSales() },
-    { name:'Barcelona, ES',   lat:41.39,  lon:2.17,    flag:'🇪🇸', note:randSales() },
-    { name:'Lisboa, PT',      lat:38.72,  lon:-9.14,   flag:'🇵🇹', note:randSales() },
-    { name:'Porto, PT',       lat:41.15,  lon:-8.61,   flag:'🇵🇹', note:randSales() },
-    { name:'Montevideo, UY',  lat:-34.90, lon:-56.16,  flag:'🇺🇾', note:randSales() },
-    { name:'San José, CR',    lat:9.93,   lon:-84.08,  flag:'🇨🇷', note:randSales() },
-    { name:'Ciudad de México, MX', lat:19.43, lon:-99.13, flag:'🇲🇽', note:randSales() },
-    { name:'Cancún, MX',      lat:21.16,  lon:-86.85,  flag:'🇲🇽', note:randSales() },
-    { name:'Toronto, CA',     lat:43.65,  lon:-79.38,  flag:'🇨🇦', note:randSales() },
-    { name:'Ottawa, CA',      lat:45.42,  lon:-75.70,  flag:'🇨🇦', note:randSales() },
-    { name:'Montreal, CA',    lat:45.50,  lon:-73.57,  flag:'🇨🇦', note:randSales() },
-    { name:'Vancouver, CA',   lat:49.28,  lon:-123.12, flag:'🇨🇦', note:randSales() },
-    { name:'El Cairo, EG',    lat:30.04,  lon:31.24,   flag:'🇪🇬', note:randSales() },
-    { name:'Delhi, IN',       lat:28.61,  lon:77.21,   flag:'🇮🇳', note:randSales() },
-    { name:'Santiago, CL',    lat:-33.45, lon:-70.67,  flag:'🇨🇱', note:randSales() },
-    { name:'Antofagasta, CL', lat:-23.65, lon:-70.40,  flag:'🇨🇱', note:randSales() },
-    { name:'Quito, EC',       lat:-0.18,  lon:-78.47,  flag:'🇪🇨', note:randSales() }
+    { name:'Cali, CO',        lat:3.45,   lon:-76.53,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Medellín, CO',    lat:6.25,   lon:-75.56,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Bogotá, CO',      lat:4.71,   lon:-74.07,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Cartagena, CO',   lat:10.39,  lon:-75.51,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Popayán, CO',     lat:2.44,   lon:-76.61,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Barranquilla, CO',lat:10.96,  lon:-74.80,  flag:'🇨🇴', amount:randAmount() },
+    { name:'Miami, US',       lat:25.76,  lon:-80.19,  flag:'🇺🇸', amount:randAmount() },
+    { name:'New York, US',    lat:40.71,  lon:-74.01,  flag:'🇺🇸', amount:randAmount() },
+    { name:'Tampa, US',       lat:27.95,  lon:-82.46,  flag:'🇺🇸', amount:randAmount() },
+    { name:'Washington, US',  lat:38.90,  lon:-77.04,  flag:'🇺🇸', amount:randAmount() },
+    { name:'Delaware, US',    lat:39.75,  lon:-75.55,  flag:'🇺🇸', amount:randAmount() },
+    { name:'Paris, FR',       lat:48.86,  lon:2.35,    flag:'🇫🇷', amount:randAmount() },
+    { name:'Madrid, ES',      lat:40.42,  lon:-3.70,   flag:'🇪🇸', amount:randAmount() },
+    { name:'Barcelona, ES',   lat:41.39,  lon:2.17,    flag:'🇪🇸', amount:randAmount() },
+    { name:'Lisboa, PT',      lat:38.72,  lon:-9.14,   flag:'🇵🇹', amount:randAmount() },
+    { name:'Porto, PT',       lat:41.15,  lon:-8.61,   flag:'🇵🇹', amount:randAmount() },
+    { name:'Montevideo, UY',  lat:-34.90, lon:-56.16,  flag:'🇺🇾', amount:randAmount() },
+    { name:'San José, CR',    lat:9.93,   lon:-84.08,  flag:'🇨🇷', amount:randAmount() },
+    { name:'Ciudad de México, MX', lat:19.43, lon:-99.13, flag:'🇲🇽', amount:randAmount() },
+    { name:'Cancún, MX',      lat:21.16,  lon:-86.85,  flag:'🇲🇽', amount:randAmount() },
+    { name:'Toronto, CA',     lat:43.65,  lon:-79.38,  flag:'🇨🇦', amount:randAmount() },
+    { name:'Ottawa, CA',      lat:45.42,  lon:-75.70,  flag:'🇨🇦', amount:randAmount() },
+    { name:'Montreal, CA',    lat:45.50,  lon:-73.57,  flag:'🇨🇦', amount:randAmount() },
+    { name:'Vancouver, CA',   lat:49.28,  lon:-123.12, flag:'🇨🇦', amount:randAmount() },
+    { name:'El Cairo, EG',    lat:30.04,  lon:31.24,   flag:'🇪🇬', amount:randAmount() },
+    { name:'Delhi, IN',       lat:28.61,  lon:77.21,   flag:'🇮🇳', amount:randAmount() },
+    { name:'Santiago, CL',    lat:-33.45, lon:-70.67,  flag:'🇨🇱', amount:randAmount() },
+    { name:'Antofagasta, CL', lat:-23.65, lon:-70.40,  flag:'🇨🇱', amount:randAmount() },
+    { name:'Quito, EC',       lat:-0.18,  lon:-78.47,  flag:'🇪🇨', amount:randAmount() }
   ];
 
   // the tour order round-robins across countries (one pin per country per pass) instead of
@@ -917,7 +1076,7 @@
   // the hover tooltip so the two look identical.
   function drawInfoCard(pp, topY, pin, alpha){
     var title = pin.flag + '  ' + pin.name;
-    var note = pin.note || '';
+    var note = pin.amount != null ? formatSales(pin.amount) : (pin.note || '');
     ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
     var titleW = ctx.measureText(title).width;
     ctx.font = '400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
